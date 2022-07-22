@@ -1,0 +1,25 @@
+<div data-sly-use.car="com.vehicle.core.models.Car"
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-car">
+
+    <div class="container">
+
+        <div class="row p-5">
+            <div class="col-6 ">
+                <img src="${car.imageUrl}" class="img-fluid">
+            </div>
+
+            <div class="col-6">
+                <h1 class="cmp-car__title">${car.brand} - ${car.model} </h1>
+                <br/>
+                <h3>Technical details</h3>
+                <hr/>
+                <h4>Year: ${car.year}</h4>
+                <h4>Kilometers: ${car.kilometers}</h4>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

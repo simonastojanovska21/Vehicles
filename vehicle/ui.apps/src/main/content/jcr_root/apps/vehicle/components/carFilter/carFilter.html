@@ -1,0 +1,22 @@
+<div
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <div class="border-0 p-5">
+        <h1>Brands</h1>
+        <select class="form-select" name="brand-select">
+            <option selected>All</option>
+        </select>
+
+        <h1>Model</h1>
+        <select class="form-select" name="model-select">
+            <option selected>All</option>
+        </select>
+
+        <h1>Brands</h1>
+        <select class="form-select" name="brand-select">
+            <option selected>All</option>
+        </select>
+    </div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

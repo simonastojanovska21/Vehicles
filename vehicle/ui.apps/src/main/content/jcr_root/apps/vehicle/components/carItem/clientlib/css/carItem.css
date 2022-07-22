@@ -1,0 +1,15 @@
+.itemImages{
+    width: auto !important;
+    max-width: 100%;
+    max-height: 150px;
+}
+
+.cmp-item__title{
+    color: #B65040;
+    margin: 20px auto 5px;
+}
+
+.cmp-item__button{
+    background-color: #141219 !important;
+}
+

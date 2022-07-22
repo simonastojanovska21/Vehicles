@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/vehicle" mode="merge"/>
+    <filter root="/content/vehicle" mode="merge"/>
+    <filter root="/content/dam/vehicle/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/vehicle" mode="merge"/>
+</workspaceFilter>

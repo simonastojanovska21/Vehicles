@@ -1,0 +1,7 @@
+.cmp-header{
+    background-color: #C9Cdd0;
+}
+
+.cmp-header__image{
+    max-height: 70px !important;
+}

@@ -1,0 +1,12 @@
+<div data-sly-use.cars=""
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-carList">
+
+    <div class="container">
+
+        <div class="" data-sly-list="${}"></div>
+
+    </div>
+
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

@@ -1,0 +1,23 @@
+<div data-sly-use.banner = "com.vehicle.core.models.ImageBanner"
+        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-banner">
+
+    <div class="card">
+
+        <div class="cmp-banner__image d-block w-100 card-img"
+             data-sly-resource="${ '.' @ resourceType = 'vehicle/components/image' }">
+        </div>
+
+        <div class="card-img-overlay mt-5 text-center">
+            <h1 class="fontSize mb-4 mt-5 text-white">${banner.bannerText}</h1>
+
+            <a class=" mt-2 btn btn-lg text-white fontSize" href="${banner.buttonRedirect @ extension = 'html'}" style="background-color: #B65040 !important;" role="button">
+                ${banner.buttonText}
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

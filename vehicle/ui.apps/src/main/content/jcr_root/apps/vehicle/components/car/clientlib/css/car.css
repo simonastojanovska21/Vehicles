@@ -1,0 +1,11 @@
+.cmp-car{
+    background-color: #eeeeee;
+}
+
+.cmp-car__title{
+    font-size: 36px;
+    color: #B65040;
+    font-family: 'Droid Serif', serif;
+    font-style: italic;
+    font-weight: bold;
+}

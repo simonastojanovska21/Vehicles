@@ -1,0 +1,4 @@
+com\vehicle\it\tests\PublishPageValidationIT.class
+com\vehicle\it\tests\GetPageIT.class
+com\vehicle\it\tests\CreatePageIT.class
+com\vehicle\it\tests\HtmlUnitClient.class

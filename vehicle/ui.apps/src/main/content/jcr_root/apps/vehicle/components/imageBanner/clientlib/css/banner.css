@@ -1,0 +1,12 @@
+.cmp-banner{
+    position: relative;
+}
+
+
+.fontSize{
+    font-size: 50px;
+}
+
+.cmp-banner__button{
+    background-color: #B65040 !important;
+}

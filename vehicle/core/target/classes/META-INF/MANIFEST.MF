@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Bundle-Category: Vehicles Project
+Bundle-Description: Core bundle for Vehicles Project
+Bundle-ManifestVersion: 2
+Bundle-Name: Vehicles Project - Core
+Bundle-SymbolicName: vehicle.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Export-Package: com.vehicle.core.filters;version="1.0";uses:="javax.se
+ rvlet",com.vehicle.core.listeners;version="1.0";uses:="org.apache.sli
+ ng.api.resource.observation",com.vehicle.core.models;version="1.0";us
+ es:="javax.annotation,org.apache.sling.api.resource,org.apache.sling.
+ models.annotations,org.apache.sling.models.annotations.injectorspecif
+ ic",com.vehicle.core.schedulers;version="1.0",com.vehicle.core.servle
+ ts;version="1.0";uses:="javax.servlet,org.apache.sling.api,org.apache
+ .sling.api.servlets"
+Import-Package: javax.annotation;version="0.0.0",com.day.cq.wcm.api;ve
+ rsion="[1.29,2)",com.fasterxml.jackson.databind;version="[2.11,3)",co
+ m.fasterxml.jackson.databind.node;version="[2.11,3)",com.vehicle.core
+ .filters;version="[1.0,2)",com.vehicle.core.listeners;version="[1.0,2
+ )",com.vehicle.core.schedulers;version="[1.0,2)",com.vehicle.core.ser
+ vlets;version="[1.0,2)",javax.servlet;version="[3.1,4)",org.apache.sl
+ ing.api;version="[2.3,3)",org.apache.sling.api.request;version="[2.4,
+ 3)",org.apache.sling.api.resource;version="[2.12,3)",org.apache.sling
+ .api.resource.observation;version="[1.2,2)",org.apache.sling.api.serv
+ lets;version="[2.3,3)",org.apache.sling.models.annotations;version="[
+ 1.5,2)",org.apache.sling.models.annotations.injectorspecific;version=
+ "[1.1,2)",org.slf4j;version="[1.7,2)"
+Provide-Capability: osgi.service;objectClass:List<String>="java.lang.R
+ unnable",osgi.service;objectClass:List<String>="javax.servlet.Filter"
+ ;uses:="javax.servlet",osgi.service;objectClass:List<String>="javax.s
+ ervlet.Servlet";uses:="javax.servlet",osgi.service;objectClass:List<S
+ tring>="org.apache.sling.api.resource.observation.ResourceChangeListe
+ ner";uses:="org.apache.sling.api.resource.observation"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.4.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.vehicle.core.filters.LoggingFilter.xml
+ ,OSGI-INF/com.vehicle.core.listeners.SimpleResourceListener.xml,OSGI-
+ INF/com.vehicle.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.
+ vehicle.core.servlets.DemoServlet.xml,OSGI-INF/com.vehicle.core.servl
+ ets.SimpleServlet.xml
+Sling-Model-Classes: com.vehicle.core.models.Car,com.vehicle.core.mode
+ ls.HelloWorldModel,com.vehicle.core.models.ImageBanner,com.vehicle.co
+ re.models.Map
+

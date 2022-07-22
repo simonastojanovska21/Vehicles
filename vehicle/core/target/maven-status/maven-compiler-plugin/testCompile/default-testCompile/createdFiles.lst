@@ -1,0 +1,7 @@
+com\vehicle\core\testcontext\AppAemContext$1.class
+com\vehicle\core\filters\LoggingFilterTest.class
+com\vehicle\core\listeners\SimpleResourceListenerTest.class
+com\vehicle\core\schedulers\SimpleScheduledTaskTest.class
+com\vehicle\core\servlets\SimpleServletTest.class
+com\vehicle\core\models\HelloWorldModelTest.class
+com\vehicle\core\testcontext\AppAemContext.class

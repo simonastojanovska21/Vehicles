@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Build-Jdk-Spec: 11
+Implementation-Title: Vehicles Project - All
+Implementation-Version: 1.0.0-SNAPSHOT
+Content-Package-Type: container
+Content-Package-Id: com.vehicle:vehicle.all:1.0.0-SNAPSHOT
+Content-Package-Description: All content package for Vehicles Project
+Content-Package-Roots: /apps/vehicle-packages,/apps/vehicle-vendor-packa
+ ges
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vehicle.ui.apps" />
+        <module name="vehicle.ui.config" />
+        <module name="vehicle.core" />
+        <module name="vehicle.it.tests" />
+        <module name="vehicle.ui.tests" />
+        <module name="vehicle.all" />
+        <module name="vehicle.ui.content" />
+        <module name="vehicle.ui.apps.structure" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
