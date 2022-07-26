@@ -1,19 +1,10 @@
-<div data-sly-use.car="com.vehicle.core.models.Car"
+<div
      data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+    <div class="row" id="cars">
 
-    <div class="border-0 p-5">
-        <img src="${car.imageUrl}" class="card-img-top itemImages">
-        <div className="card-body">
-            <h2 class="cmp-item__title">
-                ${car.brand} - ${car.model}
-            </h2>
-        </div>
-        <div class="d-grid gap-2">
-            <a class="cmp-item__button mt-2 btn btn-lg text-white fontSize" href="#" role="button">
-                See details
-            </a>
-        </div>
     </div>
+
+
 
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

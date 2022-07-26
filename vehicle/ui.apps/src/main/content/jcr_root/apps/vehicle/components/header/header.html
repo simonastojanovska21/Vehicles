@@ -1,0 +1,19 @@
+
+<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-header">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/apps/vehicle/components/header/clientlib/resources/carLogo.png" class="img-fluid cmp-header__image">
+            </div>
+
+            <div class="col-sm-8">
+                <sly data-sly-resource="${'./navigation' @ decoration=true}"></sly>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>

@@ -17,6 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -30,17 +33,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui.apps/src/main/content/jcr_root/apps/vehicle/components/navigation/clientlib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui.apps/src/main/content/jcr_root/apps/vehicle/components/carList" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3869565" />
+    <property name="settings.editor.selected.configurable" value="preferences.packagesearch.PackageSearchGeneralConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carList" />
+      <recent name="D:\GitHub\Vehicles\vehicle" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\car" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carFilter" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carItem" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carList" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
@@ -60,10 +67,288 @@
       <updated>1658408196481</updated>
       <workItem from="1658408199814" duration="13497000" />
       <workItem from="1658442760871" duration="5453000" />
+      <workItem from="1658592104369" duration="24534000" />
+      <workItem from="1658687291565" duration="11298000" />
+      <workItem from="1658736911111" duration="27961000" />
+      <workItem from="1658819422334" duration="15310000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.bind:jakarta.xml.bind-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-pkg-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.xmlbeans:xmlbeans" />
+    <option featureType="dependencySupport" implementationName="java:com.shapesecurity:salvation2" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-exec" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-servlet" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.web:javax.servlet.jsp" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.models.impl" />
+    <option featureType="dependencySupport" implementationName="java:net.sourceforge.htmlunit:htmlunit-core-js" />
+    <option featureType="dependencySupport" implementationName="java:com.googlecode.json-simple:json-simple" />
+    <option featureType="dependencySupport" implementationName="java:junit-addons:junit-addons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.rules" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-blob" />
+    <option featureType="dependencySupport" implementationName="java:com.google.code.gson:gson" />
+    <option featureType="dependencySupport" implementationName="java:org.gagravarr:vorbis-java-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-core" />
+    <option featureType="dependencySupport" implementationName="java:com.day.cq.wcm:cq-wcm-taglib" />
+    <option featureType="dependencySupport" implementationName="java:org.codelibs:jhighlight" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.caconfig.impl" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.lucene:lucene-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-pdf-module" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-xml" />
+    <option featureType="dependencySupport" implementationName="java:com.zaxxer:SparseBitSet" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.geronimo.specs:geronimo-atinject_1.0_spec" />
+    <option featureType="dependencySupport" implementationName="java:xerces:xercesImpl" />
+    <option featureType="dependencySupport" implementationName="java:com.rometools:rome-utils" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.jaxb:txw2" />
+    <option featureType="dependencySupport" implementationName="java:org.mockito:mockito-junit-jupiter" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-jcr" />
+    <option featureType="dependencySupport" implementationName="java:commons-lang:commons-lang" />
+    <option featureType="dependencySupport" implementationName="java:net.sourceforge.htmlunit:neko-htmlunit" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.models.api" />
+    <option featureType="dependencySupport" implementationName="java:org.opentest4j:opentest4j" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:pdfbox-tools" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-ocr-module" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.orbit:javax.servlet.jsp.jstl" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.cq:core.wcm.components.core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.poi:poi-scratchpad" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.contentparser.json" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-microsoft-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.resourcebuilder" />
+    <option featureType="dependencySupport" implementationName="java:commons-net:commons-net" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-store-spi" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.scripting.api" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-http" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-blob-plugins" />
+    <option featureType="dependencySupport" implementationName="java:com.healthmarketscience.jackcess:jackcess-encrypt" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-databind" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.metatype.annotations" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.servlet-helpers" />
+    <option featureType="dependencySupport" implementationName="java:org.tallison:jmatio" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-webapp" />
+    <option featureType="dependencySupport" implementationName="java:com.epam:parso" />
+    <option featureType="dependencySupport" implementationName="java:org.slf4j:slf4j-api" />
+    <option featureType="dependencySupport" implementationName="java:concurrent:concurrent" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.osgi-mock.core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.poi:poi" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.cm" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.log" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.websocket:websocket-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:pdfbox-debugger" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:jbig2-imageio" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-collections4" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-api" />
+    <option featureType="dependencySupport" implementationName="java:org.ops4j.pax.tinybundles:tinybundles" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.httpcomponents:httpclient" />
+    <option featureType="dependencySupport" implementationName="java:net.sourceforge.htmlunit:htmlunit" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.commons.classloader" />
+    <option featureType="dependencySupport" implementationName="java:org.apiguardian:apiguardian-api" />
+    <option featureType="dependencySupport" implementationName="java:org.mockito:mockito-core" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-client" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-spi" />
+    <option featureType="dependencySupport" implementationName="java:net.bytebuddy:byte-buddy" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-standalone-components" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-spi-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-security" />
+    <option featureType="dependencySupport" implementationName="java:org.brotli:dec" />
+    <option featureType="dependencySupport" implementationName="java:commons-codec:commons-codec" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.websocket:websocket-client" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-news-module" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.toolchain:jetty-schemas" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.platform:junit-platform-engine" />
+    <option featureType="dependencySupport" implementationName="java:net.bytebuddy:byte-buddy-agent" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr-commons" />
+    <option featureType="dependencySupport" implementationName="java:xml-apis:xml-apis" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:fontbox" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.annotation.versioning" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.framework" />
+    <option featureType="dependencySupport" implementationName="java:com.vehicle:vehicle.core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.settings" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-text" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr2dav" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-spi2dav" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.sling-mock.core" />
+    <option featureType="dependencySupport" implementationName="java:javax.servlet:servlet-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-miscoffice-module" />
+    <option featureType="dependencySupport" implementationName="java:org.bouncycastle:bcutil-jdk15on" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr2spi" />
+    <option featureType="dependencySupport" implementationName="java:com.day.commons:day-commons-gfx" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parsers-standard-package" />
+    <option featureType="dependencySupport" implementationName="java:com.vehicle:vehicle.ui.apps.structure" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.commons.osgi" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr-rmi" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.caconfig.spi" />
+    <option featureType="dependencySupport" implementationName="java:org.ops4j.base:ops4j-base-store" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-engine" />
+    <option featureType="dependencySupport" implementationName="java:com.rometools:rome" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-font-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-crypto-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.caconfig.api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.scripting.core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-query-spi" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.serversetup" />
+    <option featureType="dependencySupport" implementationName="java:org.reflections:reflections" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.cq:core.wcm.components.config" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-annotations" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.fsresource" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:pdfbox" />
+    <option featureType="dependencySupport" implementationName="java:org.slf4j:jcl-over-slf4j" />
+    <option featureType="dependencySupport" implementationName="java:com.vehicle:vehicle.ui.content" />
+    <option featureType="dependencySupport" implementationName="java:xalan:serializer" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr-servlet" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.clients" />
+    <option featureType="dependencySupport" implementationName="java:jline:jline" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.api" />
+    <option featureType="dependencySupport" implementationName="java:xerces:xmlParserAPIs" />
+    <option featureType="dependencySupport" implementationName="java:uk.org.lidalia:slf4j-test" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish:javax.el" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.compendium" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.servlets.annotations" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.cq:cq-testing-clients-65" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-text-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-csv" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.geronimo.specs:geronimo-json_1.1_spec" />
+    <option featureType="dependencySupport" implementationName="java:com.sun.istack:istack-commons-runtime" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.resourceresolver-mock" />
+    <option featureType="dependencySupport" implementationName="java:org.gagravarr:vorbis-java-tika" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-jsp" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-api" />
+    <option featureType="dependencySupport" implementationName="java:uk.org.lidalia:lidalia-lang" />
+    <option featureType="dependencySupport" implementationName="java:javax.annotation:javax.annotation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.bouncycastle:bcmail-jdk15on" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-util" />
+    <option featureType="dependencySupport" implementationName="java:javax.servlet:javax.servlet-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.jcr-mock" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-image-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.poi:poi-ooxml-schemas" />
+    <option featureType="dependencySupport" implementationName="java:com.day.commons:day-commons-any" />
+    <option featureType="dependencySupport" implementationName="java:org.javassist:javassist" />
+    <option featureType="dependencySupport" implementationName="java:com.github.junrar:junrar" />
+    <option featureType="dependencySupport" implementationName="java:javax.servlet.jsp:javax.servlet.jsp-api" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.commons.mime" />
+    <option featureType="dependencySupport" implementationName="java:xalan:xalan" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.resourceresolver" />
+    <option featureType="dependencySupport" implementationName="java:org.codehaus.jackson:jackson-mapper-asl" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit.vault:org.apache.jackrabbit.vault" />
+    <option featureType="dependencySupport" implementationName="java:commons-pool:commons-pool" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-apple-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.contentparser.xml-jcr" />
+    <option featureType="dependencySupport" implementationName="java:commons-io:commons-io" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.annotation.bundle" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.jaxb:jaxb-runtime" />
+    <option featureType="dependencySupport" implementationName="java:net.sourceforge.htmlunit:htmlunit-cssparser" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-library" />
+    <option featureType="dependencySupport" implementationName="java:ch.qos.logback:logback-classic" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.component.annotations" />
+    <option featureType="dependencySupport" implementationName="java:uk.org.lidalia:lidalia-slf4j-ext" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.orbit:org.eclipse.jdt.core" />
+    <option featureType="dependencySupport" implementationName="java:org.objenesis:objenesis" />
+    <option featureType="dependencySupport" implementationName="java:commons-jexl:commons-jexl" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.event" />
+    <option featureType="dependencySupport" implementationName="java:commons-fileupload:commons-fileupload" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.pdfbox:jempbox" />
+    <option featureType="dependencySupport" implementationName="java:junit:junit" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.web:javax.servlet.jsp.jstl" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.featureflags" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-cad-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-mail-module" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-webapp" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.i18n" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.service.component" />
+    <option featureType="dependencySupport" implementationName="java:org.bouncycastle:bcprov-jdk15on" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.httpcomponents:httpcore" />
+    <option featureType="dependencySupport" implementationName="java:ch.qos.logback:logback-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.adapter" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-lang3" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.contentparser.api" />
+    <option featureType="dependencySupport" implementationName="java:com.github.virtuald:curvesapi" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.util.tracker" />
+    <option featureType="dependencySupport" implementationName="java:org.jsoup:jsoup" />
+    <option featureType="dependencySupport" implementationName="java:commons-collections:commons-collections" />
+    <option featureType="dependencySupport" implementationName="java:org.ops4j.base:ops4j-base-lang" />
+    <option featureType="dependencySupport" implementationName="java:org.ow2.asm:asm" />
+    <option featureType="dependencySupport" implementationName="java:org.tukaani:xz" />
+    <option featureType="dependencySupport" implementationName="java:com.pff:java-libpst" />
+    <option featureType="dependencySupport" implementationName="java:com.google.guava:guava" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-imaging" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.jcr.api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-html-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-xml-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.taglibs:taglibs-standard-impl" />
+    <option featureType="dependencySupport" implementationName="java:org.ccil.cowan.tagsoup:tagsoup" />
+    <option featureType="dependencySupport" implementationName="java:biz.aQute.bnd:biz.aQute.bndlib" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.commons:commons-math3" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.cq:core.wcm.components.content" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.aem:uber-jar" />
+    <option featureType="dependencySupport" implementationName="java:io.wcm:io.wcm.testing.aem-mock.core" />
+    <option featureType="dependencySupport" implementationName="java:javax.servlet.jsp:jsp-api" />
+    <option featureType="dependencySupport" implementationName="java:org.osgi:org.osgi.resource" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.serviceusermapper" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty.websocket:websocket-common" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-params" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-html-module" />
+    <option featureType="dependencySupport" implementationName="java:commons-cli:commons-cli" />
+    <option featureType="dependencySupport" implementationName="java:com.day.commons:day-commons-text" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.felix:org.apache.felix.utils" />
+    <option featureType="dependencySupport" implementationName="java:javax.jcr:jcr" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-code-module" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.xss" />
+    <option featureType="dependencySupport" implementationName="java:com.healthmarketscience.jackcess:jackcess" />
+    <option featureType="dependencySupport" implementationName="java:com.github.jai-imageio:jai-imageio-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-xmp-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.jcr.resource" />
+    <option featureType="dependencySupport" implementationName="java:org.codehaus.jackson:jackson-core-asl" />
+    <option featureType="dependencySupport" implementationName="java:org.ops4j.base:ops4j-base-monitors" />
+    <option featureType="dependencySupport" implementationName="java:joda-time:joda-time" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-security-spi" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-core-spi" />
+    <option featureType="dependencySupport" implementationName="java:com.googlecode.juniversalchardet:juniversalchardet" />
+    <option featureType="dependencySupport" implementationName="java:commons-logging:commons-logging" />
+    <option featureType="dependencySupport" implementationName="java:com.adobe.cq:core.wcm.components.testing.aem-mock-plugin" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.derby:derby" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-zip-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:oak-jackrabbit-api" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-server" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-jcr-server" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.hapi.client" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.johnzon:johnzon-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.caconfig-mock-plugin" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-core" />
+    <option featureType="dependencySupport" implementationName="java:org.ops4j.base:ops4j-base-io" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.testing.hamcrest" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.scripting.sightly.runtime" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.platform:junit-platform-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-data" />
+    <option featureType="dependencySupport" implementationName="java:com.vehicle:vehicle.ui.apps" />
+    <option featureType="dependencySupport" implementationName="java:com.vehicle:vehicle.ui.config" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.poi:poi-ooxml" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.jackrabbit:jackrabbit-webdav" />
+    <option featureType="dependencySupport" implementationName="java:com.google.code.findbugs:jsr305" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.httpcomponents:httpmime" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-audiovideo-module" />
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.jetty:jetty-io" />
+    <option featureType="dependencySupport" implementationName="java:commons-chain:commons-chain" />
+    <option featureType="dependencySupport" implementationName="java:commons-beanutils:commons-beanutils" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-digest-commons" />
+    <option featureType="dependencySupport" implementationName="java:commons-dbcp:commons-dbcp" />
+    <option featureType="dependencySupport" implementationName="java:com.googlecode.plist:dd-plist" />
+    <option featureType="dependencySupport" implementationName="java:commons-digester:commons-digester" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tika:tika-parser-mail-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.bouncycastle:bcpkix-jdk15on" />
+    <option featureType="dependencySupport" implementationName="java:io.wcm:io.wcm.testing.aem-mock.junit5" />
+    <option featureType="dependencySupport" implementationName="java:org.slf4j:slf4j-simple" />
+    <option featureType="dependencySupport" implementationName="java:com.sun.activation:jakarta.activation" />
+    <option featureType="dependencySupport" implementationName="java:org.jdom:jdom2" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.commons.json" />
   </component>
 </project>

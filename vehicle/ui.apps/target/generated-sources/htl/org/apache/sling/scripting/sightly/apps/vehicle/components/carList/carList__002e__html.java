@@ -34,19 +34,28 @@ public final class carList__002e__html extends RenderUnit {
                                 RenderContext renderContext) {
 // Main Template Body -----------------------------------------------------------------------------
 
-Object _global_cars = null;
 Object _global_placeholdertemplate = null;
 Object _dynamic_hascontent = bindings.get("hascontent");
-_global_cars = renderContext.call("use", "", obj());
+out.write("\r\n");
 _global_placeholdertemplate = renderContext.call("use", "core/wcm/components/commons/v1/templates.html", obj());
-out.write("<div class=\"cmp-carList\">\r\n\r\n    <div class=\"container\">\r\n\r\n        \r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n");
+out.write("<div class=\"cmp-carList\">\r\n\r\n    <div class=\"container\">\r\n\r\n      <div class=\"row\">\r\n          <div class=\"col-4\">\r\n              <div>");
 {
-    Object var_templatevar10 = renderContext.getObjectModel().resolveProperty(_global_placeholdertemplate, "placeholder");
+    Object var_resourcecontent0 = renderContext.call("includeResource", "carFilter", obj().with("resourceType", "vehicle/components/carFilter"));
+    out.write(renderContext.getObjectModel().toString(var_resourcecontent0));
+}
+out.write("</div>\r\n          </div>\r\n\r\n          <div class=\"col-8\">\r\n              <div>");
+{
+    Object var_resourcecontent1 = renderContext.call("includeResource", "carItem", obj().with("resourceType", "vehicle/components/carItem"));
+    out.write(renderContext.getObjectModel().toString(var_resourcecontent1));
+}
+out.write("</div>\r\n          </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n");
+{
+    Object var_templatevar2 = renderContext.getObjectModel().resolveProperty(_global_placeholdertemplate, "placeholder");
     {
-        boolean var_templateoptions11_field$_isempty = (!renderContext.getObjectModel().toBoolean(_dynamic_hascontent));
+        boolean var_templateoptions3_field$_isempty = (!renderContext.getObjectModel().toBoolean(_dynamic_hascontent));
         {
-            java.util.Map var_templateoptions11 = obj().with("isEmpty", var_templateoptions11_field$_isempty);
-            callUnit(out, renderContext, var_templatevar10, var_templateoptions11);
+            java.util.Map var_templateoptions3 = obj().with("isEmpty", var_templateoptions3_field$_isempty);
+            callUnit(out, renderContext, var_templatevar2, var_templateoptions3);
         }
     }
 }

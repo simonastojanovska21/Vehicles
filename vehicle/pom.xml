@@ -719,7 +719,12 @@ Bundle-DocURL:
                 <type>zip</type>
                 <version>${core.wcm.components.version}</version>
             </dependency>
-
+<!--            <dependency>-->
+<!--                <groupId>org.apache.jackrabbit</groupId>-->
+<!--                <artifactId>jackrabbit-standalone</artifactId>-->
+<!--                <scope>system</scope>-->
+<!--                <version>2.14.10</version>-->
+<!--            </dependency>-->
 
             <!-- Testing -->
             <dependency>
@@ -772,5 +777,13 @@ Bundle-DocURL:
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.jackrabbit</groupId>
+            <artifactId>jackrabbit-standalone-components</artifactId>
+            <version>2.21.10</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 </project>

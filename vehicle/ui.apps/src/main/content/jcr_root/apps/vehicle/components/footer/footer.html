@@ -1,0 +1,33 @@
+<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-footer">
+
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-4">
+                <h2 class="redText pb-3">Contact</h2>
+                <ul class="list-unstyled redText">
+                    <li><h5><i class="fa-solid fa-house mr-2"></i> Car dealership</h5></li>
+                    <li><h5><i class="fa-solid fa-envelope mr-2"></i> email@example.com</h5></li>
+                    <li><h5><i class="fa-solid fa-phone mr-2"></i> + 389 70 123 456</h5></li>
+                    <li><h5><i class="fa-solid fa-print mr-2"></i> + 389 02 123 456</h5></li>
+                </ul>
+            </div>
+
+            <div class="col-5">
+                <h2 class="redText pb-3">Location</h2>
+
+                <div data-sly-resource="${'map' @ resourceType='vehicle/components/map'}"></div>
+
+            </div>
+
+            <div class="col-3">
+                <h2 class="redText pb-3">Working hours</h2>
+                <div class="d-flex justify-content-between pb-2 pt-3">
+                    <div class="redText"><h5>Monday-Friday</h5></div>
+                    <div class="redText"><h5>09:00-17:00</h5></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=true}"></sly>

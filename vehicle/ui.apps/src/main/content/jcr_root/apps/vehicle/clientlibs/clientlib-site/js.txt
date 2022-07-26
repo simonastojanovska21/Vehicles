@@ -18,3 +18,4 @@
 bootstrap.min.js
 jquery.min.js
 popper.min.js
+fontAwesome.js

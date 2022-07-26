@@ -1,9 +1,18 @@
-<div data-sly-use.cars=""
+
+<div
      data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" class="cmp-carList">
 
     <div class="container">
 
-        <div class="" data-sly-list="${}"></div>
+      <div class="row">
+          <div class="col-4">
+              <div data-sly-resource="${'carFilter' @ resourceType='vehicle/components/carFilter'}"></div>
+          </div>
+
+          <div class="col-8">
+              <div data-sly-resource="${'carItem' @ resourceType='vehicle/components/carItem'}"></div>
+          </div>
+      </div>
 
     </div>
 
