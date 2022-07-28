@@ -17,12 +17,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="JavaScript File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="2CFpT3Lyl4aDMQhLRAgijH503TA" />
   <component name="ProjectViewState">
@@ -33,21 +36,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ui.apps/src/main/content/jcr_root/apps/vehicle/components/carList" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../aem/repoTest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3869565" />
-    <property name="settings.editor.selected.configurable" value="preferences.packagesearch.PackageSearchGeneralConfigurable" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.config\src\main\content\jcr_root\apps\vehicle\osgiconfig\config" />
       <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carList" />
       <recent name="D:\GitHub\Vehicles\vehicle" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\car" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carFilter" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
@@ -70,7 +74,11 @@
       <workItem from="1658592104369" duration="24534000" />
       <workItem from="1658687291565" duration="11298000" />
       <workItem from="1658736911111" duration="27961000" />
-      <workItem from="1658819422334" duration="15310000" />
+      <workItem from="1658819422334" duration="20750000" />
+      <workItem from="1658857794757" duration="1056000" />
+      <workItem from="1658860994193" duration="12356000" />
+      <workItem from="1658906221671" duration="26905000" />
+      <workItem from="1658992350289" duration="5066000" />
     </task>
     <servers />
   </component>

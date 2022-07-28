@@ -1,6 +1,7 @@
 package com.vehicle.core.services.impl;
 
 import com.vehicle.core.models.CarModel;
+import com.vehicle.core.models.exceptions.CarModelNotFoundException;
 import com.vehicle.core.services.CarModelService;
 import org.osgi.service.component.annotations.Component;
 
@@ -18,6 +19,12 @@ public class CarModelServiceImpl implements CarModelService {
     @Override
     public List<CarModel> getCarModelsForBrand(int brandId) {
         return createCarModels().stream().filter(each->each.getBrandId()==brandId).collect(Collectors.toList());
+    }
+
+    @Override
+    public String getNameForCarModelId(int carModelId) {
+        return getAllCarModels().stream().filter(each->each.getCarModelId() == carModelId).findFirst()
+                .map(CarModel::getModelName).orElseThrow(CarModelNotFoundException::new);
     }
 
     private List<CarModel> createCarModels(){

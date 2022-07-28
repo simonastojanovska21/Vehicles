@@ -1,6 +1,7 @@
 package com.vehicle.core.services.impl;
 
 import com.vehicle.core.models.Brand;
+import com.vehicle.core.models.exceptions.BrandNotFoundException;
 import com.vehicle.core.services.BrandService;
 import org.osgi.service.component.annotations.Component;
 
@@ -12,6 +13,12 @@ public class BrandServiceImpl implements BrandService{
     @Override
     public List<Brand> getAllBrands() {
         return this.createBrandList();
+    }
+
+    @Override
+    public String getBrandNameForBrandId(int brandId) {
+        return getAllBrands().stream().filter(each->each.getBrandId() == brandId).findFirst()
+                .map(Brand::getBrandName).orElseThrow(BrandNotFoundException::new);
     }
 
     public List<Brand> createBrandList(){

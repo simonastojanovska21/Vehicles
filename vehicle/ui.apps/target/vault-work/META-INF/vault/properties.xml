@@ -4,7 +4,7 @@
 <comment>Vehicles Project - UI apps</comment>
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="dependencies-locations">adobe/cq60:core.wcm.components.content:2.17.12=maven:com.adobe.cq:core.wcm.components.content:2.17.12:zip,adobe/cq60:core.wcm.components.config:2.17.12=maven:com.adobe.cq:core.wcm.components.config:2.17.12:zip</entry>
-<entry key="created">2022-07-26T14:01:48.858Z</entry>
+<entry key="created">2022-07-28T08:59:06.244Z</entry>
 <entry key="groupId">com.vehicle</entry>
 <entry key="description">UI apps package for Vehicles Project</entry>
 <entry key="version">1.0.0-SNAPSHOT</entry>

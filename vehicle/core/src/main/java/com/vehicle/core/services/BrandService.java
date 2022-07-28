@@ -8,4 +8,5 @@ import java.util.List;
 @ProviderType
 public interface BrandService {
     List<Brand> getAllBrands();
+    String getBrandNameForBrandId(int brandId);
 }

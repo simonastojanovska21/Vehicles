@@ -37,7 +37,7 @@ public final class carFilter__002e__html extends RenderUnit {
 Object _global_placeholdertemplate = null;
 Object _dynamic_hascontent = bindings.get("hascontent");
 _global_placeholdertemplate = renderContext.call("use", "core/wcm/components/commons/v1/templates.html", obj());
-out.write("<div id=\"filters\">\r\n\r\n    <div class=\"border-0 p-5\">\r\n        <h1>Brands</h1>\r\n        <select class=\"form-select\" name=\"brand-select\" id=\"brand-select\">\r\n            <option>All</option>\r\n\r\n        </select>\r\n\r\n        <h1>Model</h1>\r\n        <select class=\"form-select\" name=\"model-select\" id=\"model-select\" disabled>\r\n            <option selected>All</option>\r\n        </select>\r\n\r\n        <h1>Year</h1>\r\n        <select class=\"form-select\" name=\"brand-select\" id=\"year-select\">\r\n            <option selected>All</option>\r\n        </select>\r\n    </div>\r\n\r\n</div>\r\n");
+out.write("<div id=\"filters\">\r\n\r\n    <div class=\"border-0 p-5\">\r\n        <h1>Brands</h1>\r\n        <select class=\"form-select\" name=\"brand-select\" id=\"brand-select\">\r\n            <option value=\"All\">All</option>\r\n\r\n        </select>\r\n\r\n        <h1>Model</h1>\r\n        <select class=\"form-select\" name=\"model-select\" id=\"model-select\" disabled>\r\n            <option value=\"All\">All</option>\r\n        </select>\r\n\r\n        <h1>Year</h1>\r\n        <select class=\"form-select\" name=\"brand-select\" id=\"year-select\">\r\n            <option value=\"All\">All</option>\r\n        </select>\r\n    </div>\r\n\r\n</div>\r\n");
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_placeholdertemplate, "placeholder");
     {

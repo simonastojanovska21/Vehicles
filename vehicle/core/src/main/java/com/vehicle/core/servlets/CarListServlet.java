@@ -27,7 +27,9 @@ public class CarListServlet extends SlingSafeMethodsServlet {
                          final SlingHttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-        String jsonArray = mapper.writeValueAsString(carService.getAllCars());
+        String jsonArray = mapper.writeValueAsString(carService.filterCars(req.getParameter("brandId"),
+                req.getParameter("carModelId"),
+                req.getParameter("year")));
         resp.getWriter().write(jsonArray);
     }
 }

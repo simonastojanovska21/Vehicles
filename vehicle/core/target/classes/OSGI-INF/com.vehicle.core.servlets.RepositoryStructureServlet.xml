@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.vehicle.core.servlets.RepositoryStructureServlet">
+  <property name="sling.servlet.paths" type="String">/bin/repositoryStructure</property>
+  <property name="service.description" type="String" value="Repository Structure Servlet"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="repositoryStructureService" interface="com.vehicle.core.services.RepositoryStructureService" field="repositoryStructureService"/>
+  <implementation class="com.vehicle.core.servlets.RepositoryStructureServlet"/>
+</scr:component>

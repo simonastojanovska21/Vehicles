@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.vehicle.core.servlets.CreateNodeServlet">
+  <property name="sling.servlet.paths" type="String">/bin/nodeRepo</property>
+  <property name="service.description" type="String" value="Node Servlet"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="createNodeService" interface="com.vehicle.core.services.CreateNodeService" field="createNodeService"/>
+  <implementation class="com.vehicle.core.servlets.CreateNodeServlet"/>
+</scr:component>

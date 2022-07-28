@@ -9,4 +9,5 @@ import java.util.List;
 public interface CarModelService {
     List<CarModel> getAllCarModels();
     List<CarModel> getCarModelsForBrand(int brandId);
+    String getNameForCarModelId(int carModelId);
 }

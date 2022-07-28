@@ -1,5 +1,7 @@
 {
     "scripts": [
+        "create service user vehicle-write-service-user with path /home/users/system/vehicle",
+        "set ACL for vehicle-write-service-user\n allow jcr:read,jcr:write on /content/vehicle\n allow jcr:read on /conf/vehicle\n allow jcr:read on /apps\nend",
         "create path (sling:OrderedFolder) /content/dam/vehicle",
         "create path (nt:unstructured) /content/dam/vehicle/jcr:content",
         "set properties on /content/dam/vehicle/jcr:content\n  set cq:conf{String} to /conf/vehicle\n  set jcr:title{String} to \"Vehicles Project\"\nend"
