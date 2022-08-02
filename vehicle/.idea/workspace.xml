@@ -24,9 +24,6 @@
       </list>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="2CFpT3Lyl4aDMQhLRAgijH503TA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,16 +44,108 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib" />
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info" />
       <recent name="D:\GitHub\Vehicles\vehicle\ui.config\src\main\content\jcr_root\apps\vehicle\osgiconfig\config" />
       <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\carList" />
       <recent name="D:\GitHub\Vehicles\vehicle" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\car" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib\js" />
+      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
       <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SimpleServletTest.doGet">
+    <configuration name="HelloWorldModelTest.testGetMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.models" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.models.HelloWorldModelTest" />
+      <option name="METHOD_NAME" value="testGetMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoggingFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.filters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.filters" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.filters.LoggingFilterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoggingFilterTest.doFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.filters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.filters" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.filters.LoggingFilterTest" />
+      <option name="METHOD_NAME" value="doFilter(io.wcm.testing.mock.aem.junit5.AemContext)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleScheduledTaskTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.schedulers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.schedulers" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.schedulers.SimpleScheduledTaskTest" />
+      <option name="METHOD_NAME" value="run" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleServletTest.doGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.servlets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.servlets" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.servlets.SimpleServletTest" />
+      <option name="METHOD_NAME" value="doGet(io.wcm.testing.mock.aem.junit5.AemContext)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SimpleServletTest.doGet" />
+        <item itemvalue="JUnit.LoggingFilterTest.doFilter" />
+        <item itemvalue="JUnit.SimpleScheduledTaskTest.run" />
+        <item itemvalue="JUnit.HelloWorldModelTest.testGetMessage" />
+        <item itemvalue="JUnit.LoggingFilterTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -78,7 +167,10 @@
       <workItem from="1658857794757" duration="1056000" />
       <workItem from="1658860994193" duration="12356000" />
       <workItem from="1658906221671" duration="26905000" />
-      <workItem from="1658992350289" duration="5066000" />
+      <workItem from="1658992350289" duration="30969000" />
+      <workItem from="1659079297199" duration="17306000" />
+      <workItem from="1659279077164" duration="642000" />
+      <workItem from="1659342358316" duration="23625000" />
     </task>
     <servers />
   </component>

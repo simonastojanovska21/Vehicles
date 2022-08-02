@@ -4,9 +4,13 @@
     max-height: 150px;
 }
 
+.cmp-item{
+    height: 370px;
+}
+
 .cmp-item__title{
     color: #B65040;
-    margin: 20px auto 5px;
+    text-align: center;
 }
 
 .cmp-item__button{

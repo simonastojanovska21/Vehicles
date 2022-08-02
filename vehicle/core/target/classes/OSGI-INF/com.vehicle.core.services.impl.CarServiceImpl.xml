@@ -3,7 +3,7 @@
   <service>
     <provide interface="com.vehicle.core.services.CarService"/>
   </service>
-  <reference name="brandService" interface="com.vehicle.core.services.BrandService" field="brandService"/>
-  <reference name="carModelService" interface="com.vehicle.core.services.CarModelService" field="carModelService"/>
+  <reference name="queryService" interface="com.vehicle.core.services.QueryService" field="queryService"/>
+  <reference name="resourceResolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" field="resourceResolverFactory"/>
   <implementation class="com.vehicle.core.services.impl.CarServiceImpl"/>
 </scr:component>

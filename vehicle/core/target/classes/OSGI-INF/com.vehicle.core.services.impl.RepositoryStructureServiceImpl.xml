@@ -3,6 +3,9 @@
   <service>
     <provide interface="com.vehicle.core.services.RepositoryStructureService"/>
   </service>
+  <reference name="brandService" interface="com.vehicle.core.services.BrandService" field="brandService"/>
+  <reference name="carModelService" interface="com.vehicle.core.services.CarModelService" field="carModelService"/>
+  <reference name="httpClientService" interface="com.vehicle.core.services.HttpClientService" field="httpClientService"/>
   <reference name="resourceResolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" field="resourceResolverFactory"/>
   <implementation class="com.vehicle.core.services.impl.RepositoryStructureServiceImpl"/>
 </scr:component>

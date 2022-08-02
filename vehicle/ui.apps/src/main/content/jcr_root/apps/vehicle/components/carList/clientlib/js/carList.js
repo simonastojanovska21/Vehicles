@@ -14,6 +14,7 @@ $('#brand-select').on('change', function() {
         $('#model-select').prop('disabled', 'disabled');
     }
     else {
+        console.log("value changed")
         $('#model-select').prop('disabled', false);
         $('#model-select ').find('option').not(':first').remove();
         $.ajax({
@@ -61,11 +62,12 @@ function makeAjaxCall(brand, model, year){
 }
 function displayCarItems(carList){
     $('#cars > div').remove();
+
     $.each(carList,function (i,item){
-        $('#cars').append(`<div class="border-0 p-5 col-4">
+        $('#cars').append(`<div class="border-0 p-2 col-3 cmp-item">
                                 <img src="${item.imageUrl}" class="card-img-top itemImages">
                                 <div class="card-body">
-                                    <h2 class="cmp-item__title">${item.description}</h2>
+                                    <h2 class="cmp-item__title ">${item.description}</h2>
                                 </div>
                                 <div class="d-grid gap-2">
                                     <a class="cmp-item__button mt-2 btn btn-lg text-white fontSize" href="#" role="button">

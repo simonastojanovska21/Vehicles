@@ -14,7 +14,7 @@ public class Constants {
     public static final String CAR_MODELS_NODE_LOCATION = "/content/vehicle/carData/carModels";
 
     //It contains the path for the Car node under which all car data is stored
-    public static final String CAR_NODE_LOCATION = "/content/vehicle/carData/cars";
+    public static final String CARS_NODE_LOCATION = "/content/vehicle/carData/cars";
 
     //Constant for unstructured node type
     public static final String NT_UNSTRUCTURED = "nt:unstructured";

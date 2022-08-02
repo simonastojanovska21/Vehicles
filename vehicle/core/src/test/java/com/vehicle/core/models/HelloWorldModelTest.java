@@ -35,32 +35,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(AemContextExtension.class)
 class HelloWorldModelTest {
 
-//    private final AemContext context = AppAemContext.newAemContext();
-//
-//    private HelloWorldModel hello;
-//
-//    private Page page;
-//    private Resource resource;
-//
-//    @BeforeEach
-//    public void setup() throws Exception {
-//
-//        // prepare a page with a test resource
-//        page = context.create().page("/content/mypage");
-//        resource = context.create().resource(page, "hello",
-//            "sling:resourceType", "vehicle/components/helloworld");
-//
-//        // create sling model
-//        hello = resource.adaptTo(HelloWorldModel.class);
-//    }
-//
-//    @Test
-//    void testGetMessage() throws Exception {
-//        // some very basic junit tests
-//        String msg = hello.getMessage();
-//        assertNotNull(msg);
-//        assertTrue(StringUtils.contains(msg, resource.getResourceType()));
-//        assertTrue(StringUtils.contains(msg, page.getPath()));
-//    }
+    private final AemContext context = AppAemContext.newAemContext();
+
+    private HelloWorldModel hello;
+
+    private Page page;
+    private Resource resource;
+
+    @BeforeEach
+    public void setup() throws Exception {
+
+        // prepare a page with a test resource
+        page = context.create().page("/content/mypage");
+        resource = context.create().resource(page, "hello",
+            "sling:resourceType", "vehicle/components/helloworld");
+
+        // create sling model
+        hello = resource.adaptTo(HelloWorldModel.class);
+    }
+
+    @Test
+    void testGetMessage() throws Exception {
+        // some very basic junit tests
+        String msg = hello.getMessage();
+        assertNotNull(msg);
+        assertTrue(StringUtils.contains(msg, resource.getResourceType()));
+        assertTrue(StringUtils.contains(msg, page.getPath()));
+    }
 
 }

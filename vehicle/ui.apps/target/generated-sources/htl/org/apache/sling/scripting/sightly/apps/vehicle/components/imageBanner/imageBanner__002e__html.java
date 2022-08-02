@@ -75,7 +75,7 @@ out.write(" style=\"background-color: #B65040 !important;\" role=\"button\">");
     String var_6 = (("\r\n                " + renderContext.getObjectModel().toString(renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_banner, "buttonText"), "text"))) + "\r\n            ");
     out.write(renderContext.getObjectModel().toString(var_6));
 }
-out.write("</a>\r\n\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n</div>\r\n");
+out.write("</a>\r\n\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n\r\n");
 {
     Object var_templatevar7 = renderContext.getObjectModel().resolveProperty(_global_placeholdertemplate, "placeholder");
     {

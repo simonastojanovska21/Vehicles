@@ -1,0 +1,10 @@
+<div  data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <div data-sly-use.info="clientlib/js/info.js">
+        <h1>${info.title}</h1>
+        <p>${info.description}</p>
+    </div>
+
+</div>
+
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

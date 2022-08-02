@@ -12,13 +12,15 @@ import org.apache.sling.models.annotations.Model;
 @AllArgsConstructor
 public class Car {
 
-    private int carId;
+    private String carId;
     private int brandId;
+    private String brandName;
     private int carModelId;
+    private String carModelName;
     private String imageUrl;
     private int year;
     private int kilometers;
-    private Transmission transmission;
-    private BodyStyle bodyStyle;
+    private String transmission;
+    private String bodyStyle;
 
 }

@@ -17,4 +17,10 @@ public interface RepositoryStructureService {
      * @param request
      */
     void importBrandsAndCarMakes(SlingHttpServletRequest request);
+
+    /**
+     * Method used for inserting data in the repository, with manually writen data, for testing purposes
+     * @param request
+     */
+    void importCars(SlingHttpServletRequest request);
 }

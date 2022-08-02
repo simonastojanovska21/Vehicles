@@ -3,80 +3,101 @@ package com.vehicle.core.services.impl;
 import com.vehicle.core.models.CarModel;
 import com.vehicle.core.models.exceptions.CarModelNotFoundException;
 import com.vehicle.core.services.CarModelService;
+import com.vehicle.core.services.QueryService;
+import com.vehicle.core.utils.Constants;
+import com.vehicle.core.utils.ResourceResolverUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.api.resource.ValueMap;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component(service = CarModelService.class)
 public class CarModelServiceImpl implements CarModelService {
+
+    private static final Logger log = LoggerFactory.getLogger(CarModelServiceImpl.class);
+
+    @Reference
+    private ResourceResolverFactory resourceResolverFactory;
+
+    @Reference
+    private QueryService queryService;
+
     @Override
     public List<CarModel> getAllCarModels() {
-        return createCarModels();
-    }
-
-    @Override
-    public List<CarModel> getCarModelsForBrand(int brandId) {
-        return createCarModels().stream().filter(each->each.getBrandId()==brandId).collect(Collectors.toList());
-    }
-
-    @Override
-    public String getNameForCarModelId(int carModelId) {
-        return getAllCarModels().stream().filter(each->each.getCarModelId() == carModelId).findFirst()
-                .map(CarModel::getModelName).orElseThrow(CarModelNotFoundException::new);
-    }
-
-    private List<CarModel> createCarModels(){
-        List<CarModel> carModels = new ArrayList<>();
-        CarModel carModel = new CarModel(1,"C-Class",1);
-        carModels.add(carModel);
-        carModel = new CarModel(2,"E-Class",1);
-        carModels.add(carModel);
-        carModel = new CarModel(3,"GLA-Class",1);
-        carModels.add(carModel);
-        carModel = new CarModel(4,"AMG GT",1);
-        carModels.add(carModel);
-        carModel = new CarModel(5,"Model 3",2);
-        carModels.add(carModel);
-        carModel = new CarModel(6,"Model S",2);
-        carModels.add(carModel);
-        carModel = new CarModel(7,"X5",3);
-        carModels.add(carModel);
-        carModel = new CarModel(8,"M5",3);
-        carModels.add(carModel);
-        carModel = new CarModel(9,"330i",3);
-        carModels.add(carModel);
-        carModel = new CarModel(10,"Golf",4);
-        carModels.add(carModel);
-        carModel = new CarModel(11,"Touareg",4);
-        carModels.add(carModel);
-        carModel = new CarModel(12,"Passat",4);
-        carModels.add(carModel);
-        carModel = new CarModel(13,"500",5);
-        carModels.add(carModel);
-        carModel = new CarModel(14,"Ducato",5);
-        carModels.add(carModel);
-        carModel = new CarModel(15,"A4",6);
-        carModels.add(carModel);
-        carModel = new CarModel(16,"A6",6);
-        carModels.add(carModel);
-        carModel = new CarModel(17,"RS6",6);
-        carModels.add(carModel);
-        carModel = new CarModel(18,"Focus",7);
-        carModels.add(carModel);
-        carModel = new CarModel(19,"Mustang",7);
-        carModels.add(carModel);
-        carModel = new CarModel(20,"Accord",8);
-        carModels.add(carModel);
-        carModel = new CarModel(21,"Civic",8);
-        carModels.add(carModel);
-        carModel = new CarModel(22,"505",9);
-        carModels.add(carModel);
-        carModel = new CarModel(23,"405",9);
-        carModels.add(carModel);
-        carModel = new CarModel(24,"Ampera",10);
-        carModels.add(carModel);
+        List<CarModel> carModels=new ArrayList<>();
+        try {
+            ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
+            Session session = resourceResolver.adaptTo(Session.class);
+            queryService.getAllCarModelsQuery(session).getHits().forEach(each->{
+                try {
+                    carModels.add(createCarModelFromResource(each.getResource()));
+                } catch (RepositoryException e) {
+                    e.printStackTrace();
+                }
+            });
+        }catch (Exception e){
+            log.error("Exception when getting car models from the repository: {}",e.getMessage());
+            e.printStackTrace();
+        }
+        log.info("Returning {} car models",carModels.size());
         return carModels;
+    }
+
+    @Override
+    public List<CarModel> getCarModelsForBrand(String brandId) {
+        List<CarModel> carModels = new ArrayList<>();
+        try {
+            ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
+            Session session = resourceResolver.adaptTo(Session.class);
+            queryService.getAllCarModelsForBrandQuery(session,brandId).getHits().forEach(each-> {
+                try {
+                    carModels.add(createCarModelFromResource(each.getResource()));
+                } catch (RepositoryException e) {
+                    e.printStackTrace();
+                }
+            });
+        }catch (Exception e){
+            log.error("Exception when getting car models for brand from the repository {}",e.getMessage());
+            e.printStackTrace();
+        }
+        return carModels;
+    }
+
+    @Override
+    public void addNewCarModelToRepository(int carModelId, String carModelName, int brandId, Session session) throws RepositoryException {
+        //Getting the root location for adding car model.
+        Node carModelsRootNode =  session.getNode(Constants.CAR_MODELS_NODE_LOCATION);
+        if(!carModelsRootNode.hasNode("CarModelId"+carModelId)){
+            Node carModel = carModelsRootNode.addNode("CarModel"+carModelId);
+            carModel.setProperty("CarModelId",carModelId);
+            String carModelNameProp = carModelName.substring(0,1).toUpperCase() + carModelName.toLowerCase().substring(1);
+            carModel.setProperty("CarModelName",carModelNameProp);
+            carModel.setProperty("BrandId",brandId);
+        }
+    }
+
+    private CarModel createCarModelFromResource(Resource resource){
+        ValueMap properties = resource.adaptTo(ValueMap.class);
+        String carModelId = properties.get("CarModelId",String.class);
+        String carModelName = properties.get("CarModelName",String.class);
+        String brandId = properties.get("BrandId",String.class);
+        if(StringUtils.isNotBlank(carModelId) && StringUtils.isNotBlank(carModelName) && StringUtils.isNotBlank(brandId)){
+            return new CarModel(Integer.parseInt(carModelId),carModelName,Integer.parseInt(brandId));
+        }
+        return null;
     }
 }

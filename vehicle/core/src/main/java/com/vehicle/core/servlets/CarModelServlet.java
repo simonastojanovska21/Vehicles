@@ -37,7 +37,7 @@ public class CarModelServlet extends SlingSafeMethodsServlet {
         String jsonArray = mapper.writeValueAsString(carModelService.getAllCarModels());
         String brandId = req.getParameter("brandId");
         if(brandId != null){
-            jsonArray = mapper.writeValueAsString(carModelService.getCarModelsForBrand(Integer.parseInt(brandId)));
+            jsonArray = mapper.writeValueAsString(carModelService.getCarModelsForBrand(brandId));
         }
         resp.getWriter().write(jsonArray);
     }

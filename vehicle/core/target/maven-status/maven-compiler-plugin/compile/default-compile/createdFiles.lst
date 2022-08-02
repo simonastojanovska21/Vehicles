@@ -1,4 +1,5 @@
 com\vehicle\core\services\CarModelService.class
+com\vehicle\core\services\impl\QueryServiceImpl.class
 com\vehicle\core\filters\package-info.class
 com\vehicle\core\schedulers\package-info.class
 com\vehicle\core\schedulers\SimpleScheduledTask.class
@@ -6,6 +7,7 @@ com\vehicle\core\utils\ResourceResolverUtil.class
 com\vehicle\core\models\CarModel.class
 com\vehicle\core\listeners\package-info.class
 com\vehicle\core\services\impl\CreateNodeServiceImpl.class
+com\vehicle\core\services\HttpClientService.class
 com\vehicle\core\schedulers\SimpleScheduledTask$Config.class
 com\vehicle\core\models\enums\BodyStyle.class
 com\vehicle\core\models\dto\CarItem.class
@@ -20,6 +22,7 @@ com\vehicle\core\servlets\package-info.class
 com\vehicle\core\servlets\SimpleServlet.class
 com\vehicle\core\models\dto\BrandCarModel.class
 com\vehicle\core\listeners\SimpleResourceListener.class
+com\vehicle\core\services\impl\HttpClientServiceImpl.class
 com\vehicle\core\services\RepositoryStructureService.class
 com\vehicle\core\models\ImageBanner.class
 com\vehicle\core\models\exceptions\BrandNotFoundException.class
@@ -33,6 +36,7 @@ com\vehicle\core\servlets\BrandServlet.class
 com\vehicle\core\servlets\CarModelServlet.class
 com\vehicle\core\filters\LoggingFilter.class
 com\vehicle\core\utils\Constants.class
+com\vehicle\core\services\QueryService.class
 com\vehicle\core\models\exceptions\CarNotFoundException.class
 com\vehicle\core\services\impl\CarModelServiceImpl.class
 com\vehicle\core\models\enums\Transmission.class

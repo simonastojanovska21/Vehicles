@@ -4,6 +4,7 @@ org\apache\sling\scripting\sightly\apps\vehicle\components\header\header__002e__
 org\apache\sling\scripting\sightly\apps\vehicle\components\map\map__002e__html.class
 org\apache\sling\scripting\sightly\apps\vehicle\components\helloworld\helloworld__002e__html.class
 org\apache\sling\scripting\sightly\apps\vehicle\components\carFilter\carFilter__002e__html.class
+org\apache\sling\scripting\sightly\apps\vehicle\components\info\info__002e__html.class
 org\apache\sling\scripting\sightly\apps\vehicle\components\xfpage\content__002e__html.class
 org\apache\sling\scripting\sightly\apps\vehicle\components\car\car__002e__html.class
 org\apache\sling\scripting\sightly\apps\vehicle\components\xfpage\customfooterlibs__002e__html.class

@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class CarItem {
-    private int carId;
+    private String carId;
     private String imageUrl;
     private String description;
 }

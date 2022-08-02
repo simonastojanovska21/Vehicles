@@ -27,5 +27,6 @@ public class RepositoryStructureServlet extends SlingSafeMethodsServlet {
                          final SlingHttpServletResponse resp) throws ServletException, IOException {
         repositoryStructureService.createRepositoryStructure(req);
         repositoryStructureService.importBrandsAndCarMakes(req);
+        repositoryStructureService.importCars(req);
     }
 }

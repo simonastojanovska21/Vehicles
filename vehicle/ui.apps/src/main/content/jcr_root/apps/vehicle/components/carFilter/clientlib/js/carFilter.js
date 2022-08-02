@@ -22,9 +22,42 @@ $.ajax({
         });
     }
 })
-console.log(brands)
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// use(['getData.js'], function (getData) {
+//     var years = [2018,2019,2020,2021,2022];
+//     var filters = {};
+//     filters.years = years;
+//     filters.brands=makeAjaxCall();
+//     return filters;
+// });
+//
