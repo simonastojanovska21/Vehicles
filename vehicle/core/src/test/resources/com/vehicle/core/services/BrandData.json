@@ -1,0 +1,14 @@
+{
+  "brands": {
+    "brand1": {"jcr:primaryType":"nt:unstructured","BrandName":"Bmw","BrandId":452},
+    "brand2": {"jcr:primaryType":"nt:unstructured","BrandName":"Dodge","BrandId":476},
+    "brand3": {"jcr:primaryType":"nt:unstructured","BrandName":"Volkswagen","BrandId":482},
+    "brand4": {"jcr:primaryType":"nt:unstructured","BrandName":"Audi","BrandId":582},
+    "brand5": {"jcr:primaryType":"nt:unstructured","BrandName":"Hyundai","BrandId":498}
+  },
+  "brandWithBlankField": {
+    "brand1": {"jcr:primaryType":"nt:unstructured","BrandName":"","BrandId":452},
+    "brand2": {"jcr:primaryType":"nt:unstructured","BrandName":"Audi","BrandId":582},
+    "brand3": {"jcr:primaryType":"nt:unstructured","BrandName":"Hyundai","BrandId":498}
+  }
+}

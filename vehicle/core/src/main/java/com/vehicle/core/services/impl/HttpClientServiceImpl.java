@@ -1,5 +1,6 @@
 package com.vehicle.core.services.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vehicle.core.services.HttpClientService;
 import org.osgi.service.component.annotations.Component;

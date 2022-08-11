@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vehicle.core.services.BrandService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.servlets.annotations.SlingServletPaths;
@@ -35,7 +36,12 @@ public class BrandServlet extends SlingSafeMethodsServlet {
 
         resp.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-        String jsonArray = mapper.writeValueAsString(brandService.getAllBrands());
+        String jsonArray = null;
+        try {
+            jsonArray = mapper.writeValueAsString(brandService.getAllBrands());
+        } catch (LoginException e) {
+            e.printStackTrace();
+        }
         resp.getWriter().write(jsonArray);
     }
 }

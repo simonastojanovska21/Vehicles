@@ -1,0 +1,69 @@
+<div id="addNewCar" data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+    <div class="container mt-5 mb-5">
+        <div class="mx-auto w-50">
+
+            <h1 class="title text-center">Add new car</h1>
+            <hr/>
+
+            <form class="row g-3">
+
+                <div class="col-md-12">
+                    <label for="carBrand" class="form-label cmp-addCar__label">Brand</label>
+                    <select id="carBrand" name="carBrand" class="form-control">
+                        <option value="Select">Select</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="carModel" class="form-label cmp-addCar__label">Model</label>
+                    <select id="carModel" name="carModel" class="form-control" disabled>
+                        <option value="Select">Select</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="imageUrl" class="form-label cmp-addCar__label">Image URL</label>
+                    <input type="text" class="form-control" id="imageUrl" name="imageUrl"
+                           placeholder="Enter the image URL for the car" required/>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="year" class="form-label cmp-addCar__label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year"
+                           placeholder="Enter the year of the car" required/>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="kilometers" class="form-label cmp-addCar__label">Kilometers</label>
+                    <input type="number" class="form-control" id="kilometers" name="kilometers"
+                           placeholder="Enter the kilometers of the car" required/>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="transmission" class="form-label cmp-addCar__label">Transmission</label>
+                    <div id="transmission">
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="bodyStyle" class="form-label cmp-addCar__label">Body style</label>
+                    <div id="bodyStyle">
+
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-md-12 mt-4">
+                    <button id="submitNewCar" type="submit" class="btn btn-block text-white" style="background-color: #B65040 !important;">
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>

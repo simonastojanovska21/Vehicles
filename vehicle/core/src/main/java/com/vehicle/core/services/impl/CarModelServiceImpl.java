@@ -2,16 +2,14 @@ package com.vehicle.core.services.impl;
 
 import com.vehicle.core.models.CarModel;
 import com.vehicle.core.models.exceptions.CarModelNotFoundException;
+import com.vehicle.core.models.exceptions.InvalidDataException;
 import com.vehicle.core.services.CarModelService;
 import com.vehicle.core.services.QueryService;
 import com.vehicle.core.utils.Constants;
 import com.vehicle.core.utils.ResourceResolverUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.resource.*;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
@@ -37,43 +35,21 @@ public class CarModelServiceImpl implements CarModelService {
     private QueryService queryService;
 
     @Override
-    public List<CarModel> getAllCarModels() {
+    public List<CarModel> getAllCarModels() throws LoginException {
         List<CarModel> carModels=new ArrayList<>();
-        try {
-            ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
-            Session session = resourceResolver.adaptTo(Session.class);
-            queryService.getAllCarModelsQuery(session).getHits().forEach(each->{
-                try {
-                    carModels.add(createCarModelFromResource(each.getResource()));
-                } catch (RepositoryException e) {
-                    e.printStackTrace();
-                }
-            });
-        }catch (Exception e){
-            log.error("Exception when getting car models from the repository: {}",e.getMessage());
-            e.printStackTrace();
-        }
-        log.info("Returning {} car models",carModels.size());
+        ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
+        Session session = resourceResolver.adaptTo(Session.class);
+        queryService.getAllCarModelsQuery(session).forEachRemaining(each->carModels.add(createCarModelFromResource(each)));
         return carModels;
     }
 
     @Override
-    public List<CarModel> getCarModelsForBrand(String brandId) {
+    public List<CarModel> getCarModelsForBrand(String brandId) throws LoginException {
         List<CarModel> carModels = new ArrayList<>();
-        try {
-            ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
-            Session session = resourceResolver.adaptTo(Session.class);
-            queryService.getAllCarModelsForBrandQuery(session,brandId).getHits().forEach(each-> {
-                try {
-                    carModels.add(createCarModelFromResource(each.getResource()));
-                } catch (RepositoryException e) {
-                    e.printStackTrace();
-                }
-            });
-        }catch (Exception e){
-            log.error("Exception when getting car models for brand from the repository {}",e.getMessage());
-            e.printStackTrace();
-        }
+        ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
+        Session session = resourceResolver.adaptTo(Session.class);
+        queryService.getAllCarModelsForBrandQuery(session,brandId).forEachRemaining(each->
+                carModels.add(createCarModelFromResource(each)));
         return carModels;
     }
 
@@ -98,6 +74,8 @@ public class CarModelServiceImpl implements CarModelService {
         if(StringUtils.isNotBlank(carModelId) && StringUtils.isNotBlank(carModelName) && StringUtils.isNotBlank(brandId)){
             return new CarModel(Integer.parseInt(carModelId),carModelName,Integer.parseInt(brandId));
         }
-        return null;
+        else {
+            throw new InvalidDataException("Blank fields detected when creating car model object");
+        }
     }
 }

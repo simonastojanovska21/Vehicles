@@ -18,7 +18,6 @@ $.ajax({
                 value: item.brandId,
                 text : item.brandName
             }));
-            console.log(item);
         });
     }
 })

@@ -1,26 +1,27 @@
 package com.vehicle.core.services;
 
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.LoginException;
 import org.osgi.annotation.versioning.ProviderType;
+
+import javax.jcr.RepositoryException;
+import java.io.IOException;
 
 @ProviderType
 public interface RepositoryStructureService {
     /**
      * Method used for creating the repository hierarchy
-     * @param request
      * @return
      */
-    void createRepositoryStructure(SlingHttpServletRequest request);
+    void createRepositoryStructure() throws RepositoryException, LoginException;
 
     /**
      * Method used for importing data in the repository, with data received from api
-     * @param request
      */
-    void importBrandsAndCarMakes(SlingHttpServletRequest request);
+    void importBrandsAndCarMakes() throws RepositoryException, IOException, InterruptedException, LoginException;
 
     /**
      * Method used for inserting data in the repository, with manually writen data, for testing purposes
-     * @param request
      */
-    void importCars(SlingHttpServletRequest request);
+    void importCars() throws RepositoryException, LoginException;
 }

@@ -38,7 +38,7 @@ Object _global_placeholdertemplate = null;
 Object _dynamic_hascontent = bindings.get("hascontent");
 out.write("\r\n");
 _global_placeholdertemplate = renderContext.call("use", "core/wcm/components/commons/v1/templates.html", obj());
-out.write("<div class=\"cmp-carList\">\r\n\r\n    <div class=\"container\">\r\n\r\n      <div class=\"row\">\r\n          <div class=\"col-3\">\r\n              <div>");
+out.write("<div class=\"cmp-carList\">\r\n\r\n    <div class=\"container\">\r\n\r\n        <span class=\"title text-center\">Cars</span>\r\n\r\n      <div class=\"row\">\r\n          <div class=\"col-3\">\r\n              <div>");
 {
     Object var_resourcecontent0 = renderContext.call("includeResource", "carFilter", obj().with("resourceType", "vehicle/components/carFilter"));
     out.write(renderContext.getObjectModel().toString(var_resourcecontent0));

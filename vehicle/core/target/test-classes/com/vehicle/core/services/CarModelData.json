@@ -1,0 +1,46 @@
+{
+  "carModels": {  "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":3680,"CarModelName":"Magnum","BrandId":476},
+    "carModel2": {"jcr:primaryType":"nt:unstructured","CarModelId":1940,"CarModelName":"Nitro","BrandId":476},
+    "carModel3": {"jcr:primaryType":"nt:unstructured","CarModelId":26625,"CarModelName":"R 1250 gs","BrandId":452},
+    "carModel4": {"jcr:primaryType":"nt:unstructured","CarModelId":5238,"CarModelName":"328is","BrandId":452},
+    "carModel5": {"jcr:primaryType":"nt:unstructured","CarModelId":3133,"CarModelName":"Golf","BrandId":482},
+    "carModel6": {"jcr:primaryType":"nt:unstructured","CarModelId":30512,"CarModelName":"I7","BrandId":452},
+    "carModel7": {"jcr:primaryType":"nt:unstructured","CarModelId":29591,"CarModelName":"Tiguan 4motion","BrandId":482},
+    "carModel8": {"jcr:primaryType":"nt:unstructured","CarModelId":14343,"CarModelName":"200","BrandId":582},
+    "carModel9": {"jcr:primaryType":"nt:unstructured","CarModelId":5254,"CarModelName":"323is","BrandId":452},
+    "carModel10": {"jcr:primaryType":"nt:unstructured","CarModelId":3050,"CarModelName":"325it","BrandId":452},
+    "carModel11": {"jcr:primaryType":"nt:unstructured","CarModelId":14829,"CarModelName":"R 100 cs","BrandId":452},
+    "carModel12": {"jcr:primaryType":"nt:unstructured","CarModelId":3678,"CarModelName":"S8","BrandId":582},
+    "carModel13": {"jcr:primaryType":"nt:unstructured","CarModelId":15056,"CarModelName":"D50","BrandId":476},
+    "carModel14": {"jcr:primaryType":"nt:unstructured","CarModelId":1756,"CarModelName":"C 600","BrandId":452},
+    "carModel15": {"jcr:primaryType":"nt:unstructured","CarModelId":5200,"CarModelName":"850csi","BrandId":452},
+    "carModel16": {"jcr:primaryType":"nt:unstructured","CarModelId":26612,"CarModelName":"G 310 gs","BrandId":452},
+    "carModel17": {"jcr:primaryType":"nt:unstructured","CarModelId":16783,"CarModelName":"Rs3","BrandId":582},
+    "carModel18": {"jcr:primaryType":"nt:unstructured","CarModelId":13459,"CarModelName":"325i/325is","BrandId":452},
+    "carModel19": {"jcr:primaryType":"nt:unstructured","CarModelId":2761,"CarModelName":"M3cic","BrandId":452},
+    "carModel20": {"jcr:primaryType":"nt:unstructured","CarModelId":2298,"CarModelName":"Veloster","BrandId":498},
+    "carModel21": {"jcr:primaryType":"nt:unstructured","CarModelId":8053,"CarModelName":"Corrado","BrandId":482},
+    "carModel22": {"jcr:primaryType":"nt:unstructured","CarModelId":5138,"CarModelName":"R 1150 rt","BrandId":452},
+    "carModel23": {"jcr:primaryType":"nt:unstructured","CarModelId":3055,"CarModelName":"745li","BrandId":452},
+    "carModel24": {"jcr:primaryType":"nt:unstructured","CarModelId":2771,"CarModelName":"Azera","BrandId":498}},
+
+  "carModelsForBrand": {
+    "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":26625,"CarModelName":"R 1250 gs","BrandId":452},
+    "carModel2": {"jcr:primaryType":"nt:unstructured","CarModelId":5238,"CarModelName":"328is","BrandId":452},
+    "carModel3": {"jcr:primaryType":"nt:unstructured","CarModelId":30512,"CarModelName":"I7","BrandId":452},
+    "carModel4": {"jcr:primaryType":"nt:unstructured","CarModelId":5254,"CarModelName":"323is","BrandId":452},
+    "carModel5": {"jcr:primaryType":"nt:unstructured","CarModelId":3050,"CarModelName":"325it","BrandId":452},
+    "carModel6": {"jcr:primaryType":"nt:unstructured","CarModelId":14829,"CarModelName":"R 100 cs","BrandId":452},
+    "carModel7": {"jcr:primaryType":"nt:unstructured","CarModelId":1756,"CarModelName":"C 600","BrandId":452},
+    "carModel8": {"jcr:primaryType":"nt:unstructured","CarModelId":5200,"CarModelName":"850csi","BrandId":452},
+    "carModel9": {"jcr:primaryType":"nt:unstructured","CarModelId":26612,"CarModelName":"G 310 gs","BrandId":452},
+    "carModel10": {"jcr:primaryType":"nt:unstructured","CarModelId":13459,"CarModelName":"325i/325is","BrandId":452},
+    "carModel11": {"jcr:primaryType":"nt:unstructured","CarModelId":2761,"CarModelName":"M3cic","BrandId":452},
+    "carModel12": {"jcr:primaryType":"nt:unstructured","CarModelId":5138,"CarModelName":"R 1150 rt","BrandId":452},
+    "carModel13": {"jcr:primaryType":"nt:unstructured","CarModelId":3055,"CarModelName":"745li","BrandId":452}
+  },
+  "carModelWithBlankField": {
+    "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":26625,"CarModelName":"R 1250 gs","BrandId":452},
+    "carModel2": {"jcr:primaryType":"nt:unstructured","CarModelId":5238,"CarModelName":"","BrandId":452}
+  }
+}

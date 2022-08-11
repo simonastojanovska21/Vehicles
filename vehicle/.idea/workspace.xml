@@ -18,8 +18,10 @@
       <list>
         <option value="CSS File" />
         <option value="Enum" />
-        <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -30,19 +32,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../aem/repoTest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3869565" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.vehicle.core.models.exceptions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib" />
       <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info" />
@@ -51,99 +60,122 @@
       <recent name="D:\GitHub\Vehicles\vehicle" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core\services" />
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core\models" />
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core" />
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources" />
       <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib\js" />
-      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation\clientlib" />
-      <recent name="D:\aem\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\navigation" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.vehicle.core.services.impl" />
+      <recent name="com.vehicle.core.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SimpleServletTest.doGet">
-    <configuration name="HelloWorldModelTest.testGetMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="PIT Runner.Mutation">
+    <configuration name="BrandServiceImplTest.addNewBrandToRepository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vehicle.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vehicle.core.models.*" />
+          <option name="PATTERN" value="com.vehicle.core.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vehicle.core.models" />
-      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.models.HelloWorldModelTest" />
-      <option name="METHOD_NAME" value="testGetMessage" />
+      <option name="PACKAGE_NAME" value="com.vehicle.core.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.services.impl.BrandServiceImplTest" />
+      <option name="METHOD_NAME" value="addNewBrandToRepository" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoggingFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandServiceImplTest.createBrandResourceWithBlankField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vehicle.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vehicle.core.filters.*" />
+          <option name="PATTERN" value="com.vehicle.core.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vehicle.core.filters" />
-      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.filters.LoggingFilterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoggingFilterTest.doFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="vehicle.core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vehicle.core.filters.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.vehicle.core.filters" />
-      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.filters.LoggingFilterTest" />
-      <option name="METHOD_NAME" value="doFilter(io.wcm.testing.mock.aem.junit5.AemContext)" />
+      <option name="PACKAGE_NAME" value="com.vehicle.core.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.services.impl.BrandServiceImplTest" />
+      <option name="METHOD_NAME" value="createBrandResourceWithBlankField" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleScheduledTaskTest.run" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandServiceImplTest.getAllBrands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vehicle.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vehicle.core.schedulers.*" />
+          <option name="PATTERN" value="com.vehicle.core.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vehicle.core.schedulers" />
-      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.schedulers.SimpleScheduledTaskTest" />
-      <option name="METHOD_NAME" value="run" />
+      <option name="PACKAGE_NAME" value="com.vehicle.core.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.services.impl.BrandServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllBrands" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleServletTest.doGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarModelServiceImplTest.addNewCarModelToRepository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="vehicle.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.vehicle.core.servlets.*" />
+          <option name="PATTERN" value="com.vehicle.core.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.vehicle.core.servlets" />
-      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.servlets.SimpleServletTest" />
-      <option name="METHOD_NAME" value="doGet(io.wcm.testing.mock.aem.junit5.AemContext)" />
+      <option name="PACKAGE_NAME" value="com.vehicle.core.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.services.impl.CarModelServiceImplTest" />
+      <option name="METHOD_NAME" value="addNewCarModelToRepository" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CarModelServiceImplTest.createCarModelResourceWithBlankField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vehicle.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vehicle.core.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vehicle.core.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.vehicle.core.services.impl.CarModelServiceImplTest" />
+      <option name="METHOD_NAME" value="createCarModelResourceWithBlankField" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mutation" type="PIT" factoryName="PIT Runner" REPORT_DIR="$PROJECT_DIR$/core/target/report" SOURCE_DIRS="$PROJECT_DIR$/core/src/main/java" TARGET_CLASSES="com.vehicle.core.*" TARGET_TESTS="" otherParams="--outputFormats XML,HTML ">
+      <module name="vehicle" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CarModelServiceImplTest.addNewCarModelToRepository" />
+      <item itemvalue="JUnit.BrandServiceImplTest.getAllBrands" />
+      <item itemvalue="JUnit.BrandServiceImplTest.addNewBrandToRepository" />
+      <item itemvalue="JUnit.BrandServiceImplTest.createBrandResourceWithBlankField" />
+      <item itemvalue="JUnit.CarModelServiceImplTest.createCarModelResourceWithBlankField" />
+      <item itemvalue="PIT Runner.Mutation" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SimpleServletTest.doGet" />
-        <item itemvalue="JUnit.LoggingFilterTest.doFilter" />
-        <item itemvalue="JUnit.SimpleScheduledTaskTest.run" />
-        <item itemvalue="JUnit.HelloWorldModelTest.testGetMessage" />
-        <item itemvalue="JUnit.LoggingFilterTest" />
+        <item itemvalue="JUnit.CarModelServiceImplTest.createCarModelResourceWithBlankField" />
+        <item itemvalue="JUnit.BrandServiceImplTest.createBrandResourceWithBlankField" />
+        <item itemvalue="JUnit.BrandServiceImplTest.addNewBrandToRepository" />
+        <item itemvalue="JUnit.BrandServiceImplTest.getAllBrands" />
+        <item itemvalue="JUnit.CarModelServiceImplTest.addNewCarModelToRepository" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +203,15 @@
       <workItem from="1659079297199" duration="17306000" />
       <workItem from="1659279077164" duration="642000" />
       <workItem from="1659342358316" duration="23625000" />
+      <workItem from="1659550772481" duration="2659000" />
+      <workItem from="1659603920169" duration="32864000" />
+      <workItem from="1659787338233" duration="12777000" />
+      <workItem from="1659823557901" duration="4377000" />
+      <workItem from="1659914461824" duration="3422000" />
+      <workItem from="1659942379458" duration="36071000" />
+      <workItem from="1660037961860" duration="8900000" />
+      <workItem from="1660052945574" duration="28958000" />
+      <workItem from="1660117712292" duration="28140000" />
     </task>
     <servers />
   </component>
@@ -450,5 +491,19 @@
     <option featureType="dependencySupport" implementationName="java:com.sun.activation:jakarta.activation" />
     <option featureType="dependencySupport" implementationName="java:org.jdom:jdom2" />
     <option featureType="dependencySupport" implementationName="java:org.apache.sling:org.apache.sling.commons.json" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/vehicle$com_vehicle_core_in_vehicle_core.ic" NAME="com.vehicle.core in vehicle.core Coverage Results" MODIFIED="1660042142902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.vehicle.core.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/vehicle$ImageBannerTest.ic" NAME="ImageBannerTest Coverage Results" MODIFIED="1659648286262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.vehicle.core.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/vehicle$MapTest_getLat.ic" NAME="MapTest.getLat Coverage Results" MODIFIED="1659639961428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.vehicle.core.models.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/vehicle$LoggingFilterTest_doFilter.ic" NAME="LoggingFilterTest.doFilter Coverage Results" MODIFIED="1659642535288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.vehicle.core.filters.*</FILTER>
+    </SUITE>
   </component>
 </project>

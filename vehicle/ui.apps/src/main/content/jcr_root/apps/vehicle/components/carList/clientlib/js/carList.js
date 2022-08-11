@@ -64,16 +64,24 @@ function displayCarItems(carList){
     $('#cars > div').remove();
 
     $.each(carList,function (i,item){
-        $('#cars').append(`<div class="border-0 p-2 col-3 cmp-item">
+        $('#cars').append(`<div class="col-3">
+                                <div class="shadow p-3 mb-5 bg-body rounded border-0 card cmp-item">
                                 <img src="${item.imageUrl}" class="card-img-top itemImages">
                                 <div class="card-body">
-                                    <h2 class="cmp-item__title ">${item.description}</h2>
+                                    <h4 class="cmp-item__title text-center ">${item.description}</h4>
                                 </div>
-                                <div class="d-grid gap-2">
-                                    <a class="cmp-item__button mt-2 btn btn-lg text-white fontSize" href="#" role="button">
+                                <div class="d-grid gap-2 ">
+                                    <button name="detailsButton" data-carid="${item.carId}" class="cmp-item__button mt-2 btn btn-lg text-white fontSize" 
+                                        role="button">
                                         See details
-                                    </a>
+                                    </button>
                                 </div>
-                                </div>`)
+                                </div>
+</div>`)
     })
 }
+$('button[name="detailsButton"]').on('click',function (){
+    console.log('clicked')
+    var carId = this.dataset.carid;
+    console.log(carId)
+})

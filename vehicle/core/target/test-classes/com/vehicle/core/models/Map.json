@@ -1,0 +1,20 @@
+{
+  "map": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy" : "admin",
+    "jcr:lastModifiedBy" : "admin",
+    "lat" : "27.15",
+    "lon" : "32.17",
+    "jcr:created" : "Thu Aug 04 2022 17:21:34 GMT+0200",
+    "jcr:lastModified" : "Thu Aug 04 2022 17:35:30 GMT+0200",
+    "sling:resourceType" : "vehicle/components/map"
+  },
+  "mapDefaultValues": {
+    "jcr:primaryType" : "nt:unstructured",
+    "jcr:createdBy" : "admin",
+    "jcr:lastModifiedBy" : "admin",
+    "jcr:created" : "Thu Aug 04 2022 17:21:34 GMT+0200",
+    "jcr:lastModified" : "Thu Aug 04 2022 17:35:30 GMT+0200",
+    "sling:resourceType" : "vehicle/components/map"
+  }
+}

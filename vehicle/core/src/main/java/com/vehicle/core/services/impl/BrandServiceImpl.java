@@ -1,15 +1,13 @@
 package com.vehicle.core.services.impl;
 
 import com.vehicle.core.models.Brand;
+import com.vehicle.core.models.exceptions.InvalidDataException;
 import com.vehicle.core.services.BrandService;
 import com.vehicle.core.services.QueryService;
 import com.vehicle.core.utils.Constants;
 import com.vehicle.core.utils.ResourceResolverUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.resource.*;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
@@ -36,22 +34,11 @@ public class BrandServiceImpl implements BrandService{
     private QueryService queryService;
 
     @Override
-    public List<Brand> getAllBrands() {
+    public List<Brand> getAllBrands() throws LoginException {
         List<Brand> brands = new ArrayList<>();
-        try {
-            ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
-            Session session = resourceResolver.adaptTo(Session.class);
-            queryService.getAllBrandsQuery(session).getHits().forEach(each->{
-                try {
-                    brands.add(createBrandFromResource(each.getResource()));
-                } catch (RepositoryException e) {
-                    e.printStackTrace();
-                }
-            });
-        } catch (Exception e){
-            log.error("Exception when getting all brands from repository: {}",e.getMessage());
-            e.printStackTrace();
-        }
+        ResourceResolver resourceResolver = ResourceResolverUtil.createNewResolver(resourceResolverFactory);
+        Session session = resourceResolver.adaptTo(Session.class);
+        queryService.getAllBrandsQuery(session).forEachRemaining(each->brands.add(createBrandFromResource(each)));
         log.info("Returning {} brands",brands.size());
         return brands;
     }
@@ -75,7 +62,9 @@ public class BrandServiceImpl implements BrandService{
         if(StringUtils.isNotBlank(brandId) && StringUtils.isNotBlank(brandName)){
             return new Brand(Integer.parseInt(brandId),brandName);
         }
-        return null;
+        else {
+            throw new InvalidDataException("Blank fields detected when creating brand object");
+        }
     }
 
 }

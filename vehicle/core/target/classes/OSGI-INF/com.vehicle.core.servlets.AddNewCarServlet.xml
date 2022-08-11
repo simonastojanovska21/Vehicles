@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.vehicle.core.servlets.AddNewCarServlet">
+  <property name="sling.servlet.paths" type="String">/bin/addNewCar</property>
+  <property name="service.description" type="String" value="Add new car Servlet"/>
+  <service>
+    <provide interface="javax.servlet.Servlet"/>
+  </service>
+  <reference name="carService" interface="com.vehicle.core.services.CarService" field="carService"/>
+  <implementation class="com.vehicle.core.servlets.AddNewCarServlet"/>
+</scr:component>

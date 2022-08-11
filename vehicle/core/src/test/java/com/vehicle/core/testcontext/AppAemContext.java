@@ -44,7 +44,7 @@ public final class AppAemContext {
      * @return {@link AemContextBuilder}
      */
     public static AemContextBuilder newAemContextBuilder() {
-        return newAemContextBuilder(ResourceResolverType.RESOURCERESOLVER_MOCK);
+        return newAemContextBuilder(ResourceResolverType.JCR_MOCK);
     }
 
     /**

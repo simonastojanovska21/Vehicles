@@ -32,14 +32,18 @@ public class CarModelServlet extends SlingSafeMethodsServlet {
     protected void doGet(final SlingHttpServletRequest req,
                          final SlingHttpServletResponse resp) throws ServletException, IOException {
 
-        resp.setContentType("application/json");
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonArray = mapper.writeValueAsString(carModelService.getAllCarModels());
-        String brandId = req.getParameter("brandId");
-        if(brandId != null){
-            jsonArray = mapper.writeValueAsString(carModelService.getCarModelsForBrand(brandId));
+        try {
+            resp.setContentType("application/json");
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonArray = mapper.writeValueAsString(carModelService.getAllCarModels());
+            String brandId = req.getParameter("brandId");
+            if(brandId != null){
+                jsonArray = mapper.writeValueAsString(carModelService.getCarModelsForBrand(brandId));
+            }
+            resp.getWriter().write(jsonArray);
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        resp.getWriter().write(jsonArray);
     }
 
 }

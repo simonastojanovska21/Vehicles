@@ -14,10 +14,6 @@ in the services.
  */
 public class ResourceResolverUtil {
 
-    private ResourceResolverUtil(){
-
-    }
-
     //Static field representing the sub service name configured previously
     public static final String VEHICLE_SERVICE_USER = "vehiclewriteserviceuser";
 

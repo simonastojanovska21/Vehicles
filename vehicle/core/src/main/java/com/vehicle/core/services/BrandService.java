@@ -2,6 +2,7 @@ package com.vehicle.core.services;
 
 import com.vehicle.core.models.Brand;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.LoginException;
 import org.osgi.annotation.versioning.ProviderType;
 
 import javax.jcr.RepositoryException;
@@ -13,7 +14,7 @@ public interface BrandService {
     /*
     Method used for fetching brands data from JCR
      */
-    List<Brand> getAllBrands();
+    List<Brand> getAllBrands() throws LoginException;
 
     void addNewBrandToRepository(int brandId, String brandName, Session session) throws RepositoryException;
 }

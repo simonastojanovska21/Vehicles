@@ -7,6 +7,8 @@ import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 
+import java.util.Objects;
+
 @Model(adaptables = Resource.class)
 @Getter
 @AllArgsConstructor
@@ -22,5 +24,13 @@ public class Car {
     private int kilometers;
     private String transmission;
     private String bodyStyle;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return brandId == car.brandId && carModelId == car.carModelId && year == car.year && kilometers == car.kilometers && carId.equals(car.carId) && brandName.equals(car.brandName) && carModelName.equals(car.carModelName) && imageUrl.equals(car.imageUrl) && transmission.equals(car.transmission) && bodyStyle.equals(car.bodyStyle);
+    }
 
 }

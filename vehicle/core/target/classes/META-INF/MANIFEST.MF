@@ -5,32 +5,25 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Vehicles Project - Core
 Bundle-SymbolicName: vehicle.core
 Bundle-Version: 1.0.0.SNAPSHOT
-Export-Package: com.vehicle.core.filters;version="1.0";uses:="javax.se
- rvlet",com.vehicle.core.listeners;version="1.0";uses:="org.apache.sli
- ng.api.resource.observation",com.vehicle.core.models;version="1.0";us
- es:="javax.annotation,org.apache.sling.api.resource,org.apache.sling.
- models.annotations,org.apache.sling.models.annotations.injectorspecif
- ic",com.vehicle.core.schedulers;version="1.0",com.vehicle.core.servic
- es;version="1.0";uses:="com.day.cq.search.result,com.vehicle.core.mod
- els,javax.jcr,org.apache.sling.api",com.vehicle.core.servlets;version
- ="1.0";uses:="javax.servlet,org.apache.sling.api,org.apache.sling.api
- .servlets"
+Export-Package: com.vehicle.core.models;version="1.0";uses:="javax.ann
+ otation,org.apache.sling.api.resource,org.apache.sling.models.annotat
+ ions,org.apache.sling.models.annotations.injectorspecific",com.vehicl
+ e.core.services;version="1.0";uses:="com.vehicle.core.models,javax.jc
+ r,org.apache.sling.api,org.apache.sling.api.resource",com.vehicle.cor
+ e.servlets;version="1.0";uses:="javax.servlet,org.apache.sling.api,or
+ g.apache.sling.api.servlets"
 Import-Package: javax.annotation;version="0.0.0",com.day.cq.search;ver
  sion="[1.3,2)",com.day.cq.search.result;version="[1.2,2)",com.day.cq.
  wcm.api;version="[1.29,2)",com.fasterxml.jackson.annotation;version="
  [2.11,3)",com.fasterxml.jackson.core.type;version="[2.11,3)",com.fast
  erxml.jackson.databind;version="[2.11,3)",com.fasterxml.jackson.datab
- ind.node;version="[2.11,3)",com.vehicle.core.filters;version="[1.0,2)
- ",com.vehicle.core.listeners;version="[1.0,2)",com.vehicle.core.model
- s;version="[1.0,2)",com.vehicle.core.schedulers;version="[1.0,2)",com
- .vehicle.core.servlets;version="[1.0,2)",javax.jcr;version="[2.0,3)",
- javax.servlet;version="[3.1,4)",org.apache.commons.lang3;version="[3.
- 1,4)",org.apache.sling.api;version="[2.3,3)",org.apache.sling.api.req
- uest;version="[2.4,3)",org.apache.sling.api.resource;version="[2.12,3
- )",org.apache.sling.api.resource.observation;version="[1.2,2)",org.ap
- ache.sling.api.servlets;version="[2.3,3)",org.apache.sling.models.ann
- otations;version="[1.5,2)",org.apache.sling.models.annotations.inject
- orspecific;version="[1.1,2)",org.slf4j;version="[1.7,2)"
+ ind.node;version="[2.11,3)",com.vehicle.core.models;version="[1.0,2)"
+ ,javax.jcr;version="[2.0,3)",javax.servlet;version="[3.1,4)",org.apac
+ he.commons.lang3;version="[3.1,4)",org.apache.sling.api;version="[2.3
+ ,3)",org.apache.sling.api.resource;version="[2.12,3)",org.apache.slin
+ g.api.servlets;version="[2.3,3)",org.apache.sling.models.annotations;
+ version="[1.5,2)",org.apache.sling.models.annotations.injectorspecifi
+ c;version="[1.1,2)",org.slf4j;version="[1.7,2)"
 Private-Package: com.vehicle.core.models.dto,com.vehicle.core.models.e
  nums,com.vehicle.core.models.exceptions,com.vehicle.core.services.imp
  l,com.vehicle.core.utils
@@ -40,49 +33,39 @@ Provide-Capability: osgi.service;objectClass:List<String>="com.vehicle
  rvice";uses:="com.vehicle.core.services",osgi.service;objectClass:Lis
  t<String>="com.vehicle.core.services.CarService";uses:="com.vehicle.c
  ore.services",osgi.service;objectClass:List<String>="com.vehicle.core
- .services.CreateNodeService";uses:="com.vehicle.core.services",osgi.s
- ervice;objectClass:List<String>="com.vehicle.core.services.HttpClient
- Service";uses:="com.vehicle.core.services",osgi.service;objectClass:L
- ist<String>="com.vehicle.core.services.QueryService";uses:="com.vehic
- le.core.services",osgi.service;objectClass:List<String>="com.vehicle.
- core.services.RepositoryStructureService";uses:="com.vehicle.core.ser
- vices",osgi.service;objectClass:List<String>="java.lang.Runnable",osg
- i.service;objectClass:List<String>="javax.servlet.Filter";uses:="java
- x.servlet",osgi.service;objectClass:List<String>="javax.servlet.Servl
- et";uses:="javax.servlet",osgi.service;objectClass:List<String>="org.
- apache.sling.api.resource.observation.ResourceChangeListener";uses:="
- org.apache.sling.api.resource.observation"
+ .services.HttpClientService";uses:="com.vehicle.core.services",osgi.s
+ ervice;objectClass:List<String>="com.vehicle.core.services.QueryServi
+ ce";uses:="com.vehicle.core.services",osgi.service;objectClass:List<S
+ tring>="com.vehicle.core.services.RepositoryStructureService";uses:="
+ com.vehicle.core.services",osgi.service;objectClass:List<String>="jav
+ ax.servlet.Servlet";uses:="javax.servlet"
 Require-Capability: osgi.service;filter:="(objectClass=com.day.cq.sear
  ch.QueryBuilder)";effective:=active,osgi.service;filter:="(objectClas
  s=com.vehicle.core.services.BrandService)";effective:=active,osgi.ser
  vice;filter:="(objectClass=com.vehicle.core.services.CarModelService)
  ";effective:=active,osgi.service;filter:="(objectClass=com.vehicle.co
  re.services.CarService)";effective:=active,osgi.service;filter:="(obj
- ectClass=com.vehicle.core.services.CreateNodeService)";effective:=act
- ive,osgi.service;filter:="(objectClass=com.vehicle.core.services.Http
- ClientService)";effective:=active,osgi.service;filter:="(objectClass=
- com.vehicle.core.services.QueryService)";effective:=active,osgi.servi
- ce;filter:="(objectClass=com.vehicle.core.services.RepositoryStructur
- eService)";effective:=active,osgi.service;filter:="(objectClass=org.a
- pache.sling.api.resource.ResourceResolverFactory)";effective:=active,
- osgi.extender;filter:="(&(osgi.extender=osgi.component)(version>=1.4.
- 0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1
- 1))"
-Service-Component: OSGI-INF/com.vehicle.core.filters.LoggingFilter.xml
- ,OSGI-INF/com.vehicle.core.listeners.SimpleResourceListener.xml,OSGI-
- INF/com.vehicle.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.
- vehicle.core.services.impl.BrandServiceImpl.xml,OSGI-INF/com.vehicle.
- core.services.impl.CarModelServiceImpl.xml,OSGI-INF/com.vehicle.core.
- services.impl.CarServiceImpl.xml,OSGI-INF/com.vehicle.core.services.i
- mpl.CreateNodeServiceImpl.xml,OSGI-INF/com.vehicle.core.services.impl
- .HttpClientServiceImpl.xml,OSGI-INF/com.vehicle.core.services.impl.Qu
- eryServiceImpl.xml,OSGI-INF/com.vehicle.core.services.impl.Repository
- StructureServiceImpl.xml,OSGI-INF/com.vehicle.core.servlets.BrandServ
- let.xml,OSGI-INF/com.vehicle.core.servlets.CarListServlet.xml,OSGI-IN
- F/com.vehicle.core.servlets.CarModelServlet.xml,OSGI-INF/com.vehicle.
- core.servlets.CreateNodeServlet.xml,OSGI-INF/com.vehicle.core.servlet
- s.DemoServlet.xml,OSGI-INF/com.vehicle.core.servlets.RepositoryStruct
- ureServlet.xml,OSGI-INF/com.vehicle.core.servlets.SimpleServlet.xml
+ ectClass=com.vehicle.core.services.HttpClientService)";effective:=act
+ ive,osgi.service;filter:="(objectClass=com.vehicle.core.services.Quer
+ yService)";effective:=active,osgi.service;filter:="(objectClass=com.v
+ ehicle.core.services.RepositoryStructureService)";effective:=active,o
+ sgi.service;filter:="(objectClass=org.apache.sling.api.resource.Resou
+ rceResolverFactory)";effective:=active,osgi.extender;filter:="(&(osgi
+ .extender=osgi.component)(version>=1.4.0)(!(version>=2.0.0)))",osgi.e
+ e;filter:="(&(osgi.ee=JavaSE)(version=11))"
+Service-Component: OSGI-INF/com.vehicle.core.services.impl.BrandServic
+ eImpl.xml,OSGI-INF/com.vehicle.core.services.impl.CarModelServiceImpl
+ .xml,OSGI-INF/com.vehicle.core.services.impl.CarServiceImpl.xml,OSGI-
+ INF/com.vehicle.core.services.impl.HttpClientServiceImpl.xml,OSGI-INF
+ /com.vehicle.core.services.impl.QueryServiceImpl.xml,OSGI-INF/com.veh
+ icle.core.services.impl.RepositoryStructureServiceImpl.xml,OSGI-INF/c
+ om.vehicle.core.servlets.AddNewCarServlet.xml,OSGI-INF/com.vehicle.co
+ re.servlets.BrandServlet.xml,OSGI-INF/com.vehicle.core.servlets.CarDe
+ tailsServlet.xml,OSGI-INF/com.vehicle.core.servlets.CarListServlet.xm
+ l,OSGI-INF/com.vehicle.core.servlets.CarModelServlet.xml,OSGI-INF/com
+ .vehicle.core.servlets.DemoServlet.xml,OSGI-INF/com.vehicle.core.serv
+ lets.RepositoryStructureServlet.xml,OSGI-INF/com.vehicle.core.servlet
+ s.SimpleServlet.xml
 Sling-Model-Classes: com.vehicle.core.models.Brand,com.vehicle.core.mo
  dels.Car,com.vehicle.core.models.CarModel,com.vehicle.core.models.Hel
  loWorldModel,com.vehicle.core.models.ImageBanner,com.vehicle.core.mod
