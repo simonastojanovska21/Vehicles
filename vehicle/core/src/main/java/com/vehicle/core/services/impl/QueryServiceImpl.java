@@ -5,7 +5,6 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.SearchResult;
 import com.vehicle.core.models.exceptions.CarNotFoundException;
-import com.vehicle.core.models.exceptions.NonUniqueIdException;
 import com.vehicle.core.services.QueryService;
 import org.apache.sling.api.resource.Resource;
 import org.osgi.service.component.annotations.Component;
@@ -80,10 +79,7 @@ public class QueryServiceImpl implements QueryService{
         SearchResult searchResult = query.getResult();
         if(!searchResult.getResources().hasNext())
             throw new CarNotFoundException("Car not found");
-        Resource resource = searchResult.getResources().next();
-        if(searchResult.getResources().hasNext())
-            throw new NonUniqueIdException("Car node does not have unique id");
-        return resource;
+        return searchResult.getResources().next();
     }
 
     @Override

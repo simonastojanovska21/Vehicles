@@ -5,7 +5,6 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.SearchResult;
 import com.vehicle.core.models.exceptions.CarNotFoundException;
-import com.vehicle.core.models.exceptions.NonUniqueIdException;
 import com.vehicle.core.utils.Constants;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -27,6 +26,7 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 
 @ExtendWith({ AemContextExtension.class, MockitoExtension.class })
@@ -37,19 +37,15 @@ class QueryServiceImplTest {
     @InjectMocks
     private QueryServiceImpl queryService;
 
-    @Mock
-    private QueryBuilder queryBuilder;
+    private final QueryBuilder queryBuilder = mock(QueryBuilder.class);
 
-    @Mock
-    private Query query;
+    private final Query query = mock(Query.class);
 
-    @Mock
-    private SearchResult searchResult;
+    private final SearchResult searchResult = mock(SearchResult.class);
 
     private List<Resource> resourceList;
 
     private Session session;
-    private final ResourceResolver resourceResolver = mock(ResourceResolver.class);
 
     @BeforeEach
     void setUp(){
@@ -63,7 +59,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource(Constants.BRANDS_NODE_LOCATION);
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.BRANDS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -73,8 +69,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
 
         List<Resource> list =  new ArrayList<>();
         queryService.getAllBrandsQuery(session).forEachRemaining(list::add);
@@ -95,7 +91,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource(Constants.CAR_MODELS_NODE_LOCATION);
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CAR_MODELS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -105,8 +101,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getAllCarModelsQuery(session).forEachRemaining(list::add);
 
@@ -130,7 +126,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource("/content/vehicle/carData/carModelsForBrand");
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CAR_MODELS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -142,8 +138,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getAllCarModelsForBrandQuery(session,"476").forEachRemaining(list::add);
 
@@ -164,7 +160,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource(Constants.CARS_NODE_LOCATION);
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -174,8 +170,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getAllCarsQuery(session).forEachRemaining(list::add);
 
@@ -185,7 +181,7 @@ class QueryServiceImplTest {
 
     @Test
     void getCarDetailsQuery() {
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -197,10 +193,10 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
+        given(query.getResult()).willReturn(searchResult);
         resourceList = new ArrayList<>();
         resourceList.add(context.currentResource(Constants.CARS_NODE_LOCATION + "/car4"));
-        when(searchResult.getResources()).thenReturn(resourceList.iterator());
+        given(searchResult.getResources()).willReturn(resourceList.iterator());
 
         Resource resource = this.queryService.getCarDetailsQuery(session,"a2007ce8-cf09-465b-93f7-36fef971325f");
         assertNotNull(resource);
@@ -218,24 +214,11 @@ class QueryServiceImplTest {
     }
 
     @Test
-    void getCarDetailsQueryNonUniqueId() {
-        Resource resource = context.currentResource("/content/vehicle/carData/carDetailsNonUniqueId");
-        assertNotNull(resource);
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).thenReturn(query);
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
-
-        assertThrows(NonUniqueIdException.class,
-                ()->queryService.getCarDetailsQuery(session,"a2007ce8-cf09-465b-93f7-36fef971325f"),
-                "Car node does not have unique id");
-    }
-
-    @Test
     void getCarDetailsQueryInvalidId() {
         resourceList = new ArrayList<>();
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).thenReturn(query);
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resourceList.iterator());
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willReturn(query);
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resourceList.iterator());
 
         assertThrows(CarNotFoundException.class,
                 ()->queryService.getCarDetailsQuery(session,"125"),
@@ -247,7 +230,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource(Constants.CARS_NODE_LOCATION);
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -257,8 +240,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
 
         List<Resource> list =  new ArrayList<>();
         this.queryService.getFilteredCars(session,"All","All","All").forEachRemaining(list::add);
@@ -271,7 +254,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource("/content/vehicle/carData/filteredCarsByBrand");
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -283,8 +266,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getFilteredCars(session,"449","All","All").forEachRemaining(list::add);
 
@@ -296,7 +279,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource("/content/vehicle/carData/filteredCarsByBrandAndCarModel");
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -310,8 +293,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getFilteredCars(session,"449","2081","All").forEachRemaining(list::add);
 
@@ -323,7 +306,7 @@ class QueryServiceImplTest {
         Resource resource = context.currentResource("/content/vehicle/carData/filteredCarsByBrandCarModelAndYear");
         assertNotNull(resource);
 
-        when(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).then(invocation -> {
+        given(queryBuilder.createQuery(any(PredicateGroup.class), any(Session.class))).willAnswer(invocation -> {
             PredicateGroup pg = invocation.getArgument(0);
             assertEquals("path", pg.get(0).getType());
             assertEquals(Constants.CARS_NODE_LOCATION, pg.get(0).getParameters().get("path"));
@@ -339,8 +322,8 @@ class QueryServiceImplTest {
             assertEquals("-1", pg.getParameters().get("limit"));
             return query;
         });
-        when(query.getResult()).thenReturn(searchResult);
-        when(searchResult.getResources()).thenReturn(resource.getChildren().iterator());
+        given(query.getResult()).willReturn(searchResult);
+        given(searchResult.getResources()).willReturn(resource.getChildren().iterator());
         List<Resource> list =  new ArrayList<>();
         this.queryService.getFilteredCars(session,"449","2081","2022").forEachRemaining(list::add);
 

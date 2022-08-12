@@ -1,6 +1,6 @@
 package com.vehicle.core.services.impl;
 
-import com.vehicle.core.models.Car;
+import com.vehicle.core.ConstantsForTesting;
 import com.vehicle.core.models.dto.CarDto;
 import com.vehicle.core.models.exceptions.NodeAlreadyExistException;
 import com.vehicle.core.services.*;
@@ -10,17 +10,13 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.testing.mock.jcr.MockJcr;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
@@ -31,8 +27,8 @@ import java.util.UUID;
 
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith({ AemContextExtension.class, MockitoExtension.class })
@@ -41,7 +37,6 @@ class RepositoryStructureServiceImplTest {
 
     public AemContext context = new AemContext(ResourceResolverType.JCR_MOCK);
 
-    @InjectMocks
     private RepositoryStructureServiceImpl repositoryStructureService;
 
     private final BrandService brandService = mock(BrandServiceImpl.class);
@@ -49,23 +44,21 @@ class RepositoryStructureServiceImplTest {
     private final CarService carService = mock(CarServiceImpl.class);
     private final HttpClientService httpClientService = mock(HttpClientServiceImpl.class);
 
-    public static final String VEHICLE_SERVICE_USER = "vehiclewriteserviceuser";
 
     private final ResourceResolver resourceResolver = mock(ResourceResolver.class);
     private final ResourceResolverFactory resourceResolverFactory = mock(ResourceResolverFactory.class);
     private  Session session;
-    private Node contentNode;
     private Node vehicleNode;
     @BeforeEach
     void setUp() throws LoginException, RepositoryException {
         session = context.resourceResolver().adaptTo(Session.class);
         assert session != null;
-        contentNode = session.getRootNode().addNode("content");
+        Node contentNode = session.getRootNode().addNode("content");
         vehicleNode = contentNode.addNode("vehicle");
         final Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put(ResourceResolverFactory.SUBSERVICE, VEHICLE_SERVICE_USER);
-        when(resourceResolverFactory.getServiceResourceResolver(paramMap)).thenReturn(resourceResolver);
-        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
+        paramMap.put(ResourceResolverFactory.SUBSERVICE, ConstantsForTesting.VEHICLE_SERVICE_USER);
+        given(resourceResolverFactory.getServiceResourceResolver(paramMap)).willReturn(resourceResolver);
+        given(resourceResolver.adaptTo(Session.class)).willReturn(session);
 
         context.registerService(brandService);
         context.registerService(carModelService);
@@ -80,15 +73,15 @@ class RepositoryStructureServiceImplTest {
         assertNotNull(session);
         assertFalse(session.hasPendingChanges());
 
-        Node root = session.getNode(Constants.ROOT_NODE_LOCATION);
+        Node root = session.getNode(ConstantsForTesting.ROOT_NODE_LOCATION);
         assertNotNull(root);
-        Node carData = session.getNode(Constants.CAR_DATA_NODE_LOCATION);
+        Node carData = session.getNode(ConstantsForTesting.CAR_DATA_NODE_LOCATION);
         assertNotNull(carData);
-        Node brandsNode =  session.getNode(Constants.BRANDS_NODE_LOCATION);
+        Node brandsNode =  session.getNode(ConstantsForTesting.BRANDS_NODE_LOCATION);
         assertNotNull(brandsNode);
-        Node carModelsNode = session.getNode(Constants.CAR_MODELS_NODE_LOCATION);
+        Node carModelsNode = session.getNode(ConstantsForTesting.CAR_MODELS_NODE_LOCATION);
         assertNotNull(carModelsNode);
-        Node cars = session.getNode(Constants.CARS_NODE_LOCATION);
+        Node cars = session.getNode(ConstantsForTesting.CARS_NODE_LOCATION);
         assertNotNull(cars);
 
     }
@@ -96,7 +89,7 @@ class RepositoryStructureServiceImplTest {
     @Test()
     void createRepositoryStructureWithExistingCarDataNode() throws RepositoryException {
         vehicleNode.addNode("carData");
-        Node carData = session.getNode(Constants.CAR_DATA_NODE_LOCATION);
+        Node carData = session.getNode(ConstantsForTesting.CAR_DATA_NODE_LOCATION);
         assertNotNull(carData);
         assertThrows(NodeAlreadyExistException.class,()->repositoryStructureService.createRepositoryStructure(),
                 "Car data node already exists");
@@ -109,11 +102,11 @@ class RepositoryStructureServiceImplTest {
                             "{\"Make_ID\":476,\"Make_Name\":\"Dodge\",\"Model_ID\":3680,\"Model_Name\":\"Magnum\"}," +
                             "{\"Make_ID\":476,\"Make_Name\":\"Dodge\",\"Model_ID\":1940,\"Model_Name\":\"Nitro\"}," +
                             "{\"Make_ID\":582,\"Make_Name\":\"Audi\",\"Model_ID\":3678,\"Model_Name\":\"S8\"}]";
-        when(httpClientService.getCarModelsForBrandInJSON(any(String.class))).thenReturn(jsonResult);
+        given(httpClientService.getCarModelsForBrandInJSON(any(String.class))).willReturn(jsonResult);
         Node carData = vehicleNode.addNode("carData");
         Node brandsNodeRootNode = carData.addNode("brands");
         Node carModelsRootNode = carData.addNode("carModels");
-        doAnswer(invocationOnMock -> {
+        willAnswer(invocationOnMock -> {
             int make_id = invocationOnMock.getArgument(0);
             String make_name = invocationOnMock.getArgument(1);
             Session session = invocationOnMock.getArgument(2);
@@ -122,8 +115,8 @@ class RepositoryStructureServiceImplTest {
             brandNode.setProperty("BrandId",make_id);
             brandNode.setProperty("BrandName", make_name);
             return null;
-        }).when(brandService).addNewBrandToRepository(any(int.class),any(String.class),any(Session.class));
-        doAnswer(invocationOnMock -> {
+        }).given(brandService).addNewBrandToRepository(any(int.class),any(String.class),any(Session.class));
+        willAnswer(invocationOnMock -> {
             int model_id = invocationOnMock.getArgument(0);
             String model_name = invocationOnMock.getArgument(1);
             int make_id = invocationOnMock.getArgument(2);
@@ -134,7 +127,7 @@ class RepositoryStructureServiceImplTest {
             carModel.setProperty("CarModelName",model_name);
             carModel.setProperty("BrandId",make_id);
             return null;
-        }).when(carModelService).addNewCarModelToRepository(any(int.class),any(String.class),any(int.class),any(Session.class));
+        }).given(carModelService).addNewCarModelToRepository(any(int.class),any(String.class),any(int.class),any(Session.class));
         repositoryStructureService.importBrandsAndCarMakes();
         assertNotNull(session);
         assertFalse(session.hasPendingChanges());
@@ -146,9 +139,9 @@ class RepositoryStructureServiceImplTest {
     void importBrandsAndCarMakesThrowException() throws IOException, InterruptedException, RepositoryException, LoginException {
         String jsonResult = "[{\"Make_ID\":452,\"Make_Name\":\"Bmw\",\"Model_ID\":5200,\"Model_Name\":\"850csi\"}]";
 
-        when(httpClientService.getCarModelsForBrandInJSON(any(String.class))).thenReturn(jsonResult);
+        given(httpClientService.getCarModelsForBrandInJSON(any(String.class))).willReturn(jsonResult);
         RepositoryException repositoryException = spy(new RepositoryException());
-        doThrow(repositoryException).when(brandService).addNewBrandToRepository(any(int.class),any(String.class),any(Session.class));
+        willThrow(repositoryException).given(brandService).addNewBrandToRepository(any(int.class),any(String.class),any(Session.class));
         repositoryStructureService.importBrandsAndCarMakes();
         verify(repositoryException,atLeastOnce()).printStackTrace();
     }
@@ -156,7 +149,7 @@ class RepositoryStructureServiceImplTest {
     @Test
     void importBrandsAndCarMakesThrowsExceptionFromHttpClientService() throws IOException, InterruptedException, LoginException, RepositoryException {
         IOException ioException = spy(new IOException());
-        doThrow(ioException).when(httpClientService).getCarModelsForBrandInJSON(any(String.class));
+        willThrow(ioException).given(httpClientService).getCarModelsForBrandInJSON(any(String.class));
         repositoryStructureService.importBrandsAndCarMakes();
         verify(ioException,atLeastOnce()).printStackTrace();
     }
@@ -165,7 +158,7 @@ class RepositoryStructureServiceImplTest {
     void importCars() throws LoginException, RepositoryException, IOException, InterruptedException {
         Node carData = vehicleNode.addNode("carData");
         Node carRootNode = carData.addNode("cars");
-        doAnswer(invocationOnMock -> {
+        willAnswer(invocationOnMock -> {
             CarDto car = invocationOnMock.getArgument(0);
             assertNotNull(car);
             Session session = invocationOnMock.getArgument(1);
@@ -183,7 +176,7 @@ class RepositoryStructureServiceImplTest {
             carNode.setProperty("Transmission",car.getTransmission());
             carNode.setProperty("BodyStyle",car.getBodyStyle());
             return null;
-        }).when(carService).addNewCarToRepository(any(CarDto.class),any(Session.class));
+        }).given(carService).addNewCarToRepository(any(CarDto.class),any(Session.class));
         repositoryStructureService.importCars();
         assertNotNull(session);
         assertFalse(session.hasPendingChanges());
@@ -193,7 +186,7 @@ class RepositoryStructureServiceImplTest {
     @Test
     void importCarsCarServiceThrowsException() throws RepositoryException, LoginException {
         RepositoryException repositoryException = spy(new RepositoryException());
-        doThrow(repositoryException).when(carService).addNewCarToRepository(any(CarDto.class),any(Session.class));
+        willThrow(repositoryException).given(carService).addNewCarToRepository(any(CarDto.class),any(Session.class));
         repositoryStructureService.importCars();
         verify(repositoryException,atLeastOnce()).printStackTrace();
         verify(repositoryException,atLeastOnce()).getMessage();

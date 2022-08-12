@@ -33,15 +33,14 @@ public class BrandServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest req,
                          final SlingHttpServletResponse resp) throws ServletException, IOException {
-
-        resp.setContentType("application/json");
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonArray = null;
         try {
-            jsonArray = mapper.writeValueAsString(brandService.getAllBrands());
+            resp.setContentType("application/json");
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonArray = mapper.writeValueAsString(brandService.getAllBrands());
+            resp.getWriter().write(jsonArray);
         } catch (LoginException e) {
             e.printStackTrace();
         }
-        resp.getWriter().write(jsonArray);
+
     }
 }

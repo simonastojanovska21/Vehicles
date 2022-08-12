@@ -1,12 +1,11 @@
 package com.vehicle.core.services.impl;
 
+import com.vehicle.core.ConstantsForTesting;
 import com.vehicle.core.models.Car;
 import com.vehicle.core.models.dto.CarDto;
 import com.vehicle.core.models.dto.CarItem;
 import com.vehicle.core.models.exceptions.InvalidDataException;
-import com.vehicle.core.models.exceptions.NodeAlreadyExistException;
 import com.vehicle.core.services.QueryService;
-import com.vehicle.core.utils.Constants;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -19,7 +18,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.jcr.Node;
@@ -29,23 +27,20 @@ import javax.jcr.Session;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @ExtendWith({ AemContextExtension.class, MockitoExtension.class })
 class CarServiceImplTest {
 
     public AemContext context = new AemContext(ResourceResolverType.JCR_MOCK);
 
-    @InjectMocks
     private CarServiceImpl carService;
 
     private final ResourceResolverFactory resourceResolverFactory = mock(ResourceResolverFactory.class);
@@ -61,18 +56,18 @@ class CarServiceImplTest {
         session = context.resourceResolver().adaptTo(Session.class);
         final Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, ConstantsForTesting.VEHICLE_SERVICE_USER);
-        when(resourceResolverFactory.getServiceResourceResolver(paramMap)).thenReturn(resourceResolver);
-        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
+        given(resourceResolverFactory.getServiceResourceResolver(paramMap)).willReturn(resourceResolver);
+        given(resourceResolver.adaptTo(Session.class)).willReturn(session);
 
         context.registerService(queryService);
-        context.registerInjectActivateService(carService);
+        carService = context.registerInjectActivateService(new CarServiceImpl());
     }
 
     @Test
     void getAllCars() throws LoginException {
         Resource resource = context.currentResource(ConstantsForTesting.CARS_NODE_LOCATION);
         assertNotNull(resource);
-        when(queryService.getAllCarsQuery(any(Session.class))).thenReturn(resource.getChildren().iterator());
+        given(queryService.getAllCarsQuery(any(Session.class))).willReturn(resource.getChildren().iterator());
         List<Car> cars = carService.getAllCars();
         assertEquals(27,cars.size());
         cars.forEach(Assertions::assertNotNull);
@@ -82,8 +77,8 @@ class CarServiceImplTest {
     void filterCars() throws LoginException {
         Resource resource = context.currentResource(ConstantsForTesting.FILTERED_CAR_ITEMS_LOCATION);
         assertNotNull(resource);
-        when(queryService.getFilteredCars(any(Session.class),any(String.class),any(String.class),any(String.class)))
-                .thenReturn(resource.getChildren().iterator());
+        given(queryService.getFilteredCars(any(Session.class),any(String.class),any(String.class),any(String.class)))
+                .willReturn(resource.getChildren().iterator());
         List<CarItem> carItems = carService.filterCars("449","All","All");
         assertEquals(6,carItems.size());
         carItems.forEach(Assertions::assertNotNull);
@@ -93,8 +88,8 @@ class CarServiceImplTest {
     void filterCarsWithEmptyFields(){
         Resource resource = context.currentResource(ConstantsForTesting.CARS_NODE_EMPTY_FIELD_LOCATION);
         assertNotNull(resource);
-        when(queryService.getFilteredCars(any(Session.class),any(String.class),any(String.class),any(String.class)))
-                .thenReturn(resource.getChildren().iterator());
+        given(queryService.getFilteredCars(any(Session.class),any(String.class),any(String.class),any(String.class)))
+                .willReturn(resource.getChildren().iterator());
         assertThrows(InvalidDataException.class,()->carService.filterCars("449","All","All"),
                 "Blank fields detected when creating car item");
     }
@@ -103,7 +98,7 @@ class CarServiceImplTest {
     void getDetailsAboutCar() throws LoginException {
         Resource resource = context.currentResource(ConstantsForTesting.CARS_DETAILS_NODE_LOCATION);
         assertNotNull(resource);
-        when(queryService.getCarDetailsQuery(any(Session.class),any(String.class))).thenReturn(resource);
+        given(queryService.getCarDetailsQuery(any(Session.class),any(String.class))).willReturn(resource);
         Car expected = new Car("c65b272e-c359-4ed6-ae3a-de3f2b5e08ee",441,"Tesla",
         10199,"Model x","/apps/vehicle/components/header/clientlib/resources/carLogo.png",
                 2022,7000,"Automatic","Sedan");
@@ -111,15 +106,15 @@ class CarServiceImplTest {
         assertEquals(expected,actual);
     }
 
-//    @Test
-//    void createCarResourceWithBlankField(){
-//        Resource resource = context.currentResource("/content/vehicle/carData/carResourceWithBlankField/car1");
-//        assertNotNull(resource);
-//        when(queryService.getCarDetailsQuery(any(Session.class),any(String.class))).thenReturn(resource);
-//        assertThrows(InvalidDataException.class,()->carService.getDetailsAboutCar("ebd3dcca-ad93-445d-8f33-a3da01f156ea"),
-//                "Blank fields detected when creating car item");
-//
-//    }
+    @Test
+    void createCarResourceWithBlankField(){
+        Resource resource = context.currentResource("/content/vehicle/carData/carResourceWithBlankField/car1");
+        assertNotNull(resource);
+        given(queryService.getCarDetailsQuery(any(Session.class),any(String.class))).willReturn(resource);
+        assertThrows(InvalidDataException.class,()->carService.getDetailsAboutCar("ebd3dcca-ad93-445d-8f33-a3da01f156ea"),
+                "Blank fields detected when creating car item");
+
+    }
     @Test
     void addNewCarToRepository() throws RepositoryException {
         Node cars = session.getNode(ConstantsForTesting.CARS_NODE_LOCATION);
@@ -150,7 +145,7 @@ class CarServiceImplTest {
                 "\"bodyStyle\":\"SUV\"\n" +
                 "}\n";
         BufferedReader reader = new BufferedReader(new StringReader(carJSON));
-        when(request.getReader()).thenReturn(reader);
+        given(request.getReader()).willReturn(reader);
         carService.processAddNewCarPostRequest(request);
         assertFalse(session.hasPendingChanges());
         session.logout();

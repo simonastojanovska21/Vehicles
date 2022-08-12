@@ -37,7 +37,7 @@ public final class car__002e__html extends RenderUnit {
 Object _global_placeholdertemplate = null;
 Object _dynamic_hascontent = bindings.get("hascontent");
 _global_placeholdertemplate = renderContext.call("use", "core/wcm/components/commons/v1/templates.html", obj());
-out.write("<div>\r\n\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row p-5 carDetails\">\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n");
+out.write("<div>\r\n\r\n    <div class=\"container\">\r\n\r\n        <div class=\"row p-5\" id=\"carDetails\">\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n\r\n</div>\r\n");
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_placeholdertemplate, "placeholder");
     {

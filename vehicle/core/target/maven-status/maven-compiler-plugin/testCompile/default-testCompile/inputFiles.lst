@@ -1,9 +1,8 @@
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\services\impl\QueryServiceImplTest.java
-D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\servlets\SimpleServletTest.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\services\impl\BrandServiceImplTest.java
-D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\services\impl\CarModelServiceImplTest.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\testcontext\AppAemContext.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\services\impl\CarServiceImplTest.java
+D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\ConstantsForTesting.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\models\MapTest.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\services\impl\RepositoryStructureServiceImplTest.java
 D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\models\ImageBannerTest.java

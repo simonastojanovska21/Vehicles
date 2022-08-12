@@ -44,7 +44,7 @@ public class CarDetailsServlet extends SlingSafeMethodsServlet {
             String jsonArray = mapper.writeValueAsString(carService.getDetailsAboutCar(carId));
             resp.getWriter().write(jsonArray);
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
 

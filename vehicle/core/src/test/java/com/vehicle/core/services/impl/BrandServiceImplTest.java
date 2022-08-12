@@ -1,5 +1,6 @@
 package com.vehicle.core.services.impl;
 
+import com.vehicle.core.ConstantsForTesting;
 import com.vehicle.core.models.Brand;
 import com.vehicle.core.models.exceptions.InvalidDataException;
 import com.vehicle.core.services.QueryService;
@@ -14,7 +15,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.jcr.Node;
@@ -26,39 +26,40 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @ExtendWith({ AemContextExtension.class, MockitoExtension.class })
 class BrandServiceImplTest {
 
     public AemContext context = new AemContext(ResourceResolverType.JCR_MOCK);
 
-    @InjectMocks
     private BrandServiceImpl brandService;
 
     private final ResourceResolverFactory resourceResolverFactory = mock(ResourceResolverFactory.class);
     private final ResourceResolver resourceResolver = mock(ResourceResolver.class);
+
     private final QueryService queryService = mock(QueryServiceImpl.class);
     private Session session;
+
     @BeforeEach
     void setUp() throws LoginException {
         context.load().json("/com/vehicle/core/services/BrandData.json","/content/vehicle/carData");
         session = context.resourceResolver().adaptTo(Session.class);
         final Map<String, Object> paramMap = new HashMap<>();
         paramMap.put(ResourceResolverFactory.SUBSERVICE, ConstantsForTesting.VEHICLE_SERVICE_USER);
-        when(resourceResolverFactory.getServiceResourceResolver(paramMap)).thenReturn(resourceResolver);
-        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
+        given(resourceResolverFactory.getServiceResourceResolver(paramMap)).willReturn(resourceResolver);
+        given(resourceResolver.adaptTo(Session.class)).willReturn(session);
 
         context.registerService(queryService);
-        context.registerInjectActivateService(brandService);
+        brandService = context.registerInjectActivateService(new BrandServiceImpl());
     }
 
     @Test
     void getAllBrands() throws LoginException {
         Resource resource = context.currentResource(ConstantsForTesting.BRANDS_NODE_LOCATION);
         assertNotNull(resource);
-        when(queryService.getAllBrandsQuery(any(Session.class))).thenReturn(resource.getChildren().iterator());
+        given(queryService.getAllBrandsQuery(any(Session.class))).willReturn(resource.getChildren().iterator());
         List<Brand> brands = brandService.getAllBrands();
         assertEquals(5,brands.size());
         brands.forEach(Assertions::assertNotNull);
@@ -82,7 +83,7 @@ class BrandServiceImplTest {
     void createBrandResourceWithBlankField(){
         Resource resource = context.currentResource(ConstantsForTesting.BRANDS_NODE_EMPTY_FIELD_LOCATION);
         assertNotNull(resource);
-        when(queryService.getAllBrandsQuery(any(Session.class))).thenReturn(resource.getChildren().iterator());
+        given(queryService.getAllBrandsQuery(any(Session.class))).willReturn(resource.getChildren().iterator());
         assertThrows(InvalidDataException.class,
                 ()->brandService.getAllBrands(),
                 "Blank fields detected when creating brand object");

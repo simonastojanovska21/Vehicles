@@ -6,6 +6,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletPaths;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.propertytypes.ServiceDescription;
@@ -15,11 +16,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 @Component(service = {Servlet.class})
-@SlingServletResourceTypes(
-        resourceTypes="vehicle/components/page",
-        methods= HttpConstants.METHOD_GET,
-        selectors = "tmp",
-        extensions="json")
+@SlingServletPaths("/bin/demo")
 @ServiceDescription("Demo Servlet")
 public class DemoServlet extends SlingSafeMethodsServlet {
 

@@ -1,5 +1,6 @@
 {
-  "carModels": {  "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":3680,"CarModelName":"Magnum","BrandId":476},
+  "carModels": {
+    "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":3680,"CarModelName":"Magnum","BrandId":476},
     "carModel2": {"jcr:primaryType":"nt:unstructured","CarModelId":1940,"CarModelName":"Nitro","BrandId":476},
     "carModel3": {"jcr:primaryType":"nt:unstructured","CarModelId":26625,"CarModelName":"R 1250 gs","BrandId":452},
     "carModel4": {"jcr:primaryType":"nt:unstructured","CarModelId":5238,"CarModelName":"328is","BrandId":452},
@@ -22,7 +23,8 @@
     "carModel21": {"jcr:primaryType":"nt:unstructured","CarModelId":8053,"CarModelName":"Corrado","BrandId":482},
     "carModel22": {"jcr:primaryType":"nt:unstructured","CarModelId":5138,"CarModelName":"R 1150 rt","BrandId":452},
     "carModel23": {"jcr:primaryType":"nt:unstructured","CarModelId":3055,"CarModelName":"745li","BrandId":452},
-    "carModel24": {"jcr:primaryType":"nt:unstructured","CarModelId":2771,"CarModelName":"Azera","BrandId":498}},
+    "carModel24": {"jcr:primaryType":"nt:unstructured","CarModelId":2771,"CarModelName":"Azera","BrandId":498}
+  },
 
   "carModelsForBrand": {
     "carModel1": {"jcr:primaryType":"nt:unstructured","CarModelId":26625,"CarModelName":"R 1250 gs","BrandId":452},

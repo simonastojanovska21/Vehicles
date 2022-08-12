@@ -19,6 +19,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 
+import com.vehicle.core.ConstantsForTesting;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletResponse;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class SimpleServletTest {
         MockSlingHttpServletResponse response = context.response();
 
         fixture.doGet(request, response);
-
+        assertEquals(ConstantsForTesting.JSON_CONTENT_TYPE,response.getContentType());
         assertEquals("{\"message\":\"greetings\"}", response.getOutputAsString());
     }
 }

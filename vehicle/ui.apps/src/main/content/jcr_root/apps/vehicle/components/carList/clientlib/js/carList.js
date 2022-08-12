@@ -1,4 +1,4 @@
-var selectedBrand = $('#brand-select').val();
+var selectedBrand = jQuery('#brand-select').val();
 var selectedYear = $('#year-select').val();
 var selectedModel = $('#model-select').val()
 makeAjaxCall(selectedBrand,selectedModel,selectedYear)
@@ -57,6 +57,7 @@ function makeAjaxCall(brand, model, year){
         url: '/bin/cars?brandId='+brand+'&carModelId='+model+'&year='+year,
         success: function (data){
             displayCarItems(data);
+            //buttons();
         }
     })
 }
@@ -71,7 +72,7 @@ function displayCarItems(carList){
                                     <h4 class="cmp-item__title text-center ">${item.description}</h4>
                                 </div>
                                 <div class="d-grid gap-2 ">
-                                    <button name="detailsButton" data-carid="${item.carId}" class="cmp-item__button mt-2 btn btn-lg text-white fontSize" 
+                                    <button name="detailsButton" onclick="buttons(this)" data-carid="${item.carId}" class="cmp-item__button mt-2 btn btn-lg text-white fontSize" 
                                         role="button">
                                         See details
                                     </button>
@@ -80,8 +81,16 @@ function displayCarItems(carList){
 </div>`)
     })
 }
-$('button[name="detailsButton"]').on('click',function (){
+function buttons(el){
     console.log('clicked')
-    var carId = this.dataset.carid;
+    var carId = $(el).attr("data-carid");
     console.log(carId)
-})
+    localStorage.setItem("carId",carId);
+    window.location.href="/content/vehicle/us/en/car-details.html";
+    //displayCarDetails(carId);
+    // $('button[name="detailsButton"]').on('click',function (){
+    //     console.log('clicked')
+    //     var carId = this.dataset.carid;
+    //     console.log(carId)
+    // })
+}

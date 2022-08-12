@@ -25,6 +25,7 @@ import java.io.IOException;
 @SlingServletPaths("/bin/carModels")
 @ServiceDescription("Car models Servlet")
 public class CarModelServlet extends SlingSafeMethodsServlet {
+
     @Reference
     private CarModelService carModelService;
 

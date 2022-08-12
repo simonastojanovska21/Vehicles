@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.vehicle.core.servlets.DemoServlet">
-  <property name="sling.servlet.resourceTypes" type="String">vehicle/components/page</property>
-  <property name="sling.servlet.methods" type="String">GET</property>
-  <property name="sling.servlet.selectors" type="String">tmp</property>
-  <property name="sling.servlet.extensions" type="String">json</property>
-  <property name="sling.servlet.resourceSuperType" type="String" value="sling/bundle/resource"/>
+  <property name="sling.servlet.paths" type="String">/bin/demo</property>
   <property name="service.description" type="String" value="Demo Servlet"/>
   <service>
     <provide interface="javax.servlet.Servlet"/>

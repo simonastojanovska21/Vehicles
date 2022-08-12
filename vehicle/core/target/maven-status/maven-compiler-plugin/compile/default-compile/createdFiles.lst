@@ -2,7 +2,6 @@ com\vehicle\core\services\CarModelService.class
 com\vehicle\core\services\impl\QueryServiceImpl.class
 com\vehicle\core\utils\ResourceResolverUtil.class
 com\vehicle\core\models\CarModel.class
-com\vehicle\core\models\exceptions\NonUniqueIdException.class
 com\vehicle\core\services\HttpClientService.class
 com\vehicle\core\servlets\AddNewCarServlet.class
 com\vehicle\core\models\enums\BodyStyle.class

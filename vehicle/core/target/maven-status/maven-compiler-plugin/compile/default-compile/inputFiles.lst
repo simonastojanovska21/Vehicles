@@ -19,7 +19,6 @@ D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\models\HelloWorld
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\models\exceptions\NodeAlreadyExistException.java
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\servlets\CarDetailsServlet.java
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\utils\Constants.java
-D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\models\exceptions\NonUniqueIdException.java
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\services\BrandService.java
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\services\impl\CarServiceImpl.java
 D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\services\RepositoryStructureService.java

@@ -4,6 +4,7 @@ import com.vehicle.core.models.enums.BodyStyle;
 import com.vehicle.core.models.enums.Transmission;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 
@@ -11,6 +12,7 @@ import java.util.Objects;
 
 @Model(adaptables = Resource.class)
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class Car {
 

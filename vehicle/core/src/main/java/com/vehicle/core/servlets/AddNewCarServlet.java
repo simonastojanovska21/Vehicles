@@ -52,9 +52,7 @@ public class AddNewCarServlet extends SlingAllMethodsServlet {
     protected void doPost(final SlingHttpServletRequest req,
                           final SlingHttpServletResponse resp) throws ServletException, IOException{
         try {
-            log.info("Method call from servlet");
             carService.processAddNewCarPostRequest(req);
-            resp.sendRedirect("/content/vehicle/us/en/cars.html");
         }catch (Exception e){
             e.printStackTrace();
         }

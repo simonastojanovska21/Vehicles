@@ -33,7 +33,7 @@ public class CarListServlet extends SlingSafeMethodsServlet {
                     req.getParameter("year")));
             resp.getWriter().write(jsonArray);
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
 }

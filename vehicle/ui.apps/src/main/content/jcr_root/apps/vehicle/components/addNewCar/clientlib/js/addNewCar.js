@@ -66,23 +66,23 @@ $('#carBrand').on('change', function() {
 
 $("#submitNewCar").on('click',function(){
     var sentObject = {
-            brandId: $('#carBrand').val(),
-            brandName: $('#carBrand option:selected').text(),
-            carModelId : $('#carModel').val(),
-            carModelName : $('#carModel option:selected').text(),
-            imageUrl : $('#imageUrl').val(),
-            year : $('#year').val(),
-            kilometers : $('#kilometers').val(),
-            transmission : $('input[name=transmission]:checked').val(),
-            bodyStyle : $('input[name=bodyStyle]:checked').val()
-        };
+        brandId: $('#carBrand').val(),
+        brandName: $('#carBrand option:selected').text(),
+        carModelId : $('#carModel').val(),
+        carModelName : $('#carModel option:selected').text(),
+        imageUrl : $('#imageUrl').val(),
+        year : $('#year').val(),
+        kilometers : $('#kilometers').val(),
+        transmission : $('input[name=transmission]:checked').val(),
+        bodyStyle : $('input[name=bodyStyle]:checked').val()
+    };
     $.ajax({
         type : 'POST',
         url : '/bin/addNewCar',
         data: JSON.stringify(sentObject),
         dataType: 'json',
-        contentType: 'application/json'
+        contentType: 'application/json',
     })
-
+    window.location.href = "/content/vehicle/us/en/cars.html"
 });
 
