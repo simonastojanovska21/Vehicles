@@ -4,7 +4,7 @@
 <comment>Vehicles Project - Repository Structure Package</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2022-08-12T17:27:42.868Z</entry>
+<entry key="created">2022-08-28T23:33:36.744Z</entry>
 <entry key="groupId">com.vehicle</entry>
 <entry key="name">vehicle.ui.apps.structure</entry>
 <entry key="description">Empty package that defines the structure of the Adobe Experience Manager repository the Code packages in this project deploy into.

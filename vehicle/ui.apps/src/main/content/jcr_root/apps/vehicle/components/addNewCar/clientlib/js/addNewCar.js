@@ -63,8 +63,8 @@ $('#carBrand').on('change', function() {
     }
 });
 
-
-$("#submitNewCar").on('click',function(){
+function addNewCar(el){
+    console.log('clicked')
     var sentObject = {
         brandId: $('#carBrand').val(),
         brandName: $('#carBrand option:selected').text(),
@@ -76,6 +76,8 @@ $("#submitNewCar").on('click',function(){
         transmission : $('input[name=transmission]:checked').val(),
         bodyStyle : $('input[name=bodyStyle]:checked').val()
     };
+
+    console.log('after href')
     $.ajax({
         type : 'POST',
         url : '/bin/addNewCar',
@@ -83,6 +85,30 @@ $("#submitNewCar").on('click',function(){
         dataType: 'json',
         contentType: 'application/json',
     })
-    window.location.href = "/content/vehicle/us/en/cars.html"
-});
+
+    window.location.href = "/content/vehicle/us/en/cars.html";
+}
+
+// $("#submitNewCar").on('click',function(){
+//     var sentObject = {
+//         brandId: $('#carBrand').val(),
+//         brandName: $('#carBrand option:selected').text(),
+//         carModelId : $('#carModel').val(),
+//         carModelName : $('#carModel option:selected').text(),
+//         imageUrl : $('#imageUrl').val(),
+//         year : $('#year').val(),
+//         kilometers : $('#kilometers').val(),
+//         transmission : $('input[name=transmission]:checked').val(),
+//         bodyStyle : $('input[name=bodyStyle]:checked').val()
+//     };
+//     window.location.href = "/content/vehicle/us/en/cars.html"
+//     $.ajax({
+//         type : 'POST',
+//         url : '/bin/addNewCar',
+//         data: JSON.stringify(sentObject),
+//         dataType: 'json',
+//         contentType: 'application/json',
+//     })
+//
+// });
 

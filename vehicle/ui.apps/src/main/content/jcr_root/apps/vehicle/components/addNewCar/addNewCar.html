@@ -6,7 +6,7 @@
             <h1 class="title text-center">Add new car</h1>
             <hr/>
 
-            <form class="row g-3">
+            <div class="row g-3">
 
                 <div class="col-md-12">
                     <label for="carBrand" class="form-label cmp-addCar__label">Brand</label>
@@ -55,11 +55,11 @@
                 </div>
 
                 <div class="d-grid gap-2 col-md-12 mt-4">
-                    <button id="submitNewCar" type="submit" class="btn btn-block text-white" style="background-color: #B65040 !important;">
+                    <button id="submitNewCar" onclick="addNewCar(this)" class="btn btn-block text-white" style="background-color: #B65040 !important;">
                         Add
                     </button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 

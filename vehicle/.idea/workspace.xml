@@ -38,7 +38,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/src/test/java/com/vehicle/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -59,11 +59,11 @@
       <recent name="D:\GitHub\Vehicles\vehicle\ui.config\src\main\content\jcr_root\apps\vehicle\osgiconfig\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\java\com\vehicle\core\servlets" />
+      <recent name="D:\GitHub\Vehicles\vehicle\core\src\main\java\com\vehicle\core\servlets" />
       <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core\services" />
       <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core\models" />
       <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources\com\vehicle\core" />
-      <recent name="D:\GitHub\Vehicles\vehicle\core\src\test\resources" />
-      <recent name="D:\GitHub\Vehicles\vehicle\ui.apps\src\main\content\jcr_root\apps\vehicle\components\info\clientlib\js" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -162,12 +162,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="PIT Runner.Mutation" />
       <item itemvalue="JUnit.QueryServiceImplTest.getFilteredCarsByYear" />
       <item itemvalue="JUnit.QueryServiceImplTest.getAllBrandsQuery" />
       <item itemvalue="JUnit.CarServiceImplTest" />
       <item itemvalue="JUnit.BrandServletTest.doGet_shouldCatchExceptionsThrownFromCarsService" />
       <item itemvalue="JUnit.com.vehicle.core in vehicle.core" />
+      <item itemvalue="PIT Runner.Mutation" />
     </list>
     <recent_temporary>
       <list>
@@ -214,6 +214,11 @@
       <workItem from="1660117712292" duration="28140000" />
       <workItem from="1660202904919" duration="26011000" />
       <workItem from="1660288782024" duration="23136000" />
+      <workItem from="1660392900157" duration="612000" />
+      <workItem from="1660731967669" duration="1502000" />
+      <workItem from="1660817906412" duration="1247000" />
+      <workItem from="1660897139192" duration="2063000" />
+      <workItem from="1661727992616" duration="1795000" />
     </task>
     <servers />
   </component>

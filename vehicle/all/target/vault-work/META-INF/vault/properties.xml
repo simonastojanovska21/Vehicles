@@ -3,7 +3,7 @@
 <properties>
 <comment>Vehicles Project - All</comment>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2022-08-12T17:27:52.121Z</entry>
+<entry key="created">2022-08-28T23:33:52.084Z</entry>
 <entry key="groupId">com.vehicle</entry>
 <entry key="name">vehicle.all</entry>
 <entry key="description">All content package for Vehicles Project</entry>

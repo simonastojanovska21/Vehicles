@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.vehicle.core.services.impl.RepositoryStructureServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.82 s - in com.vehicle.core.services.impl.RepositoryStructureServiceImplTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s - in com.vehicle.core.services.impl.RepositoryStructureServiceImplTest

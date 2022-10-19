@@ -136,25 +136,6 @@ class RepositoryStructureServiceImplTest {
     }
 
     @Test
-    void importBrandsAndCarMakesThrowException() throws IOException, InterruptedException, RepositoryException, LoginException {
-        String jsonResult = "[{\"Make_ID\":452,\"Make_Name\":\"Bmw\",\"Model_ID\":5200,\"Model_Name\":\"850csi\"}]";
-
-        given(httpClientService.getCarModelsForBrandInJSON(any(String.class))).willReturn(jsonResult);
-        RepositoryException repositoryException = spy(new RepositoryException());
-        willThrow(repositoryException).given(brandService).addNewBrandToRepository(any(int.class),any(String.class),any(Session.class));
-        repositoryStructureService.importBrandsAndCarMakes();
-        verify(repositoryException,atLeastOnce()).printStackTrace();
-    }
-
-    @Test
-    void importBrandsAndCarMakesThrowsExceptionFromHttpClientService() throws IOException, InterruptedException, LoginException, RepositoryException {
-        IOException ioException = spy(new IOException());
-        willThrow(ioException).given(httpClientService).getCarModelsForBrandInJSON(any(String.class));
-        repositoryStructureService.importBrandsAndCarMakes();
-        verify(ioException,atLeastOnce()).printStackTrace();
-    }
-
-    @Test
     void importCars() throws LoginException, RepositoryException, IOException, InterruptedException {
         Node carData = vehicleNode.addNode("carData");
         Node carRootNode = carData.addNode("cars");
@@ -183,12 +164,4 @@ class RepositoryStructureServiceImplTest {
         assertEquals(26,session.getNode(Constants.CARS_NODE_LOCATION).getNodes().getSize());
     }
 
-    @Test
-    void importCarsCarServiceThrowsException() throws RepositoryException, LoginException {
-        RepositoryException repositoryException = spy(new RepositoryException());
-        willThrow(repositoryException).given(carService).addNewCarToRepository(any(CarDto.class),any(Session.class));
-        repositoryStructureService.importCars();
-        verify(repositoryException,atLeastOnce()).printStackTrace();
-        verify(repositoryException,atLeastOnce()).getMessage();
-    }
 }
